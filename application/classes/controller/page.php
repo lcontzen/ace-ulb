@@ -9,5 +9,10 @@ class Controller_Page extends Controller_Template {
 	$view = new View('page/index');
 	$this->template->set('content', $view);
   }
+
+  public function action_comite() {
+	$view = new View('page/comite');
+	$this->template->set('content', $view);
+  }
 }
 ?>
