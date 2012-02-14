@@ -26,7 +26,6 @@ class Controller_Page extends Controller_Template {
 				  );
 
 	$errors = $form;
-
 	
 	if (isset($_POST['contact_submit'])) {
 	  $post = array_map('trim', $_POST);
@@ -62,6 +61,11 @@ class Controller_Page extends Controller_Template {
 	  $view->set('form_values', $form);
 	  $this->template->set('content', $view);
 	}
+  }
+
+  public function action_photos() {
+	$view = View::factory('page/photos');
+	$this->template->set('content', $view);
   }
 }
 ?>
