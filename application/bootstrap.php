@@ -22,7 +22,7 @@ else
  * @see  http://kohanaframework.org/guide/using.configuration
  * @see  http://php.net/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('Europe/Brussels');
 
 /**
  * Set the default locale.
@@ -80,7 +80,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/',
+	'base_url'   => '/~laurent/ace-ulb/',
 ));
 
 /**
