@@ -32,12 +32,12 @@
 	  <div class="topbar" data-dropdown="dropdown">
 		<div class="topbar-inner">
           <div class="container">
-			<a class="brand" href="?action=home">Association des Cercles Etudiants</a>
+			<?php echo HTML::anchor("page/index", "Association des Cercles Etudiants", array("class" => "brand")); ?>
 			<ul class="nav">
-              <li><a href="?action=home">Accueil</a></li>
-              <li><a href="?action=comite">Comité</a></li>
-              <li><a href="?action=photos">Photos</a></li>
-              <li><a href="?action=contact">Contact</a></li>
+              <li><?php echo HTML::anchor("page/index", "Home"); ?></li>
+              <li><?php echo HTML::anchor("page/comite", "Comité"); ?></li>
+              <li><?php echo HTML::anchor("page/photos", "Photos"); ?></li>
+              <li><?php echo HTML::anchor("page/contact", "Contact"); ?></li>
 			</ul>
           </div>
 		</div>
@@ -49,23 +49,23 @@
 		<div class="well">
 		  <b>Documents</b>
 		  <ul>
-			<li><a href="?action=listesace">Listes ACE</a></li>
-			<li><a href="?action=vlecks">Listes Vlecks</a></li>
+			<li><?php echo HTML::anchor("page/listesace", "Listes ACE"); ?></a></li>
+			<li><?php echo HTML::anchor("page/vlecks", "Listes Vlecks"); ?></li>
 			<li><?php echo HTML::anchor("page/heresie", "Hérésie"); ?></li>
 		  </ul>
 		  <b>Agenda</b>
 		  <ul>
-			<li><a href="?action=tds">TDs</a></li>
-			<li><a href="?action=bals">Bals</a></li>
+			<li><?php echo HTML::anchor("page/tds", "TDs"); ?></li>
+			<li><?php echo HTML::anchor("page/bals", "Bals"); ?></li>
 		  </ul>
 		  <b>Activités</b>
 		  <ul>
-			<li><a href="?action=quetesociale">Quête Sociale</a></li>
-			<li><a href="?action=ntv">Nuit Théodore Verhaegen</a></li>
+			<li><?php echo HTML::anchor("page/quetesociale", "Quête Sociale"); ?></li>
+			<li><?php echo HTML::anchor("page/ntv", "Nuit Théodore Verhaegen"); ?></li>
 		  </ul> 
 		  <b>Divers</b>
 		  <ul>
-			<li><a href="?action=links">Liens</a></li>
+			<li><?php echo HTML::anchor("page/links", "Liens"); ?></li>
 		  </ul>
 		</div>
 	  </div> 
