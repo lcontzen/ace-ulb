@@ -292,7 +292,7 @@ class Controller_Page extends Controller_Template {
 	  $tmp = preg_replace("/\\.[^.\\s]{3,4}$/", "", $list);
 	  $tmp = explode(" ", $tmp);
 	  $tmp = str_replace("_", " ", $tmp);
-	  $names[] = $tmp[0];
+	  $names[] = $tmp;
 	}
 	
 	$view->set('zip_created', $result);
