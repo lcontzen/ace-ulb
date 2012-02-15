@@ -90,5 +90,10 @@ class Controller_Page extends Controller_Template {
 	$view->set('lists', $lists);
 	$this->template->set('content', $view);
   }
+
+  public function action_tds() {
+	$view = View::factory('page/tds');
+	$this->template->set('content', $view);
+  }
 }
 ?>
