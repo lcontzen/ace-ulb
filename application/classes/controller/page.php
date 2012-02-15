@@ -235,5 +235,10 @@ class Controller_Page extends Controller_Template {
 	$view->set('cercles', $cercles);
 	$this->template->set('content', $view);
   }
+
+  public function action_heresie() {
+	$view = View::factory('page/heresie');
+	$this->template->set('content', $view);
+  }
 }
 ?>
