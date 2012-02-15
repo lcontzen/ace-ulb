@@ -100,5 +100,11 @@ class Controller_Page extends Controller_Template {
 	$view = View::factory('page/bals');
 	$this->template->set('content', $view);
   }
+
+  public function action_quetesociale() {
+	$view = View::factory('page/quetesociale');
+	$this->template->set('content', $view);
+	
+  }
 }
 ?>
