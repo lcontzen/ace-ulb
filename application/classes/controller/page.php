@@ -67,5 +67,28 @@ class Controller_Page extends Controller_Template {
 	$view = View::factory('page/photos');
 	$this->template->set('content', $view);
   }
+
+  public function action_listesace() {
+	$view = View::factory('page/listesace');
+
+	$names = array();
+	$dir = "public/listes/ace";
+	$lists = scandir($dir);
+	$ignore = array(".", "..", "Listes ACE – 2011.docx", ".gitignore");
+	foreach ($ignore as $i)
+	  unset($lists[array_search($i ,$lists)]);
+	$lists = array_values($lists);
+	unset($i);
+
+	foreach ($lists as $list) {
+	  $tmp = preg_replace("/\\.[^.\\s]{3,4}$/", "", $list);
+	  $tmp = str_replace("Liste", "Comité", $tmp);
+	  $names[] = $tmp;
+	}
+
+	$view->set('names', $names);
+	$view->set('lists', $lists);
+	$this->template->set('content', $view);
+  }
 }
 ?>
