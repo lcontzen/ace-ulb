@@ -4,7 +4,7 @@
 
 <h3>Liste complète</h3>
 <p><?php
-  echo HTML::file_anchor('public/listes/ace/Listes ACE – 2011.docx', '<b>Download</b>', array('class' => 'btn'));
+  echo HTML::file_anchor('public/listes/ace/Listes ACE – 2011.docx', 'Télécharger', array('class' => 'btn'));
 ?></p>
 
 <h3>Listes par Cercle</h3>
