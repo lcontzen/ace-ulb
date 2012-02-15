@@ -6,17 +6,17 @@ class Controller_Page extends Controller_Template {
   public $template = 'template';
   
   public function action_index() {
-	$view = new View('page/index');
+	$view = View::factory('page/index');
 	$this->template->set('content', $view);
   }
 
   public function action_comite() {
-	$view = new View('page/comite');
+	$view = View::factory('page/comite');
 	$this->template->set('content', $view);
   }
 
   public function action_contact() {
-	$view = new View('page/contact');
+	$view = View::factory('page/contact');
 
 	$form = array(
 				  'contact_name' => '',
