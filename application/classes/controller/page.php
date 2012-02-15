@@ -134,7 +134,7 @@ class Controller_Page extends Controller_Template {
 						   "web" => "http://www.cercledessciences.be",
 						   "logo" => "public/images/logos/cds.jpg"),
 					 "cebulb" => 
-					 array("name" =>"CEBULB - Cercle des Étudiants du Borinage",
+					 array("name" =>"CEBULB - Cercle des Étudiants Borains de l'ULB",
 						   "web" => "http://www.cebulb.be",
 						   "logo" => "public/images/logos/cebulb.png"),
 					 "cecs" => 
