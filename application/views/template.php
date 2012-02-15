@@ -49,7 +49,7 @@
 		<div class="well">
 		  <b>Documents</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/listesace", "Listes ACE"); ?></a></li>
+			<li><?php echo HTML::anchor("page/listesace", "Listes ACE"); ?></li>
 			<li><?php echo HTML::anchor("page/vlecks", "Listes Vlecks"); ?></li>
 			<li><?php echo HTML::anchor("page/heresie", "Hérésie"); ?></li>
 		  </ul>
