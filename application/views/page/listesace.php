@@ -4,8 +4,6 @@
 
 <h3>Liste complète</h3>
 <p><?php
-   $myurl = 'public/listes/ace/Listes ACE – 2011.docx';
-  $myurl = str_replace(DOCROOT, '', $myurl);
   echo HTML::file_anchor('public/listes/ace/Listes ACE – 2011.docx', '<b>Download</b>', array('class' => 'btn'));
 ?></p>
 
