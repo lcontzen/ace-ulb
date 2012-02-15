@@ -8,7 +8,7 @@
    else
 	 echo "<p>Le fichier n'a pas pu être généré<br /></p>";
 ?>
-<h3>Listes par Cercle</h3>
+<h3>Listes par Cercle <small>(Dernière mise à jour)</small></h3>
 <div class="row">
   <?php
    	$count = count($lists);
@@ -20,7 +20,7 @@
 	  	   for ($j = ($i *9); $j < ($i + 1)*9 && $j < $count; $j++) {
 		 ?>
 		 						   <li>
-									 <?php echo HTML::file_anchor('public/listes/vlecks/'.$lists[$j], $names[$j]);	?>
+									 <?php echo HTML::file_anchor('public/listes/vlecks/'.$lists[$j], $names[$j][0]) . " (" . $names[$j][1] . ')';	?>
 								   </li>
 								   <?php
 		   							 }
