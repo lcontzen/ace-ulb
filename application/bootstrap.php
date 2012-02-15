@@ -64,6 +64,8 @@ I18n::lang('en-us');
 if (isset($_SERVER['KOHANA_ENV']))
 {
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
+} else {
+        Kohana::$environment = ($_SERVER['HTTP_HOST'] == 'localhost' ? Kohana::DEVELOPMENT : Kohana::PRODUCTION);
 }
 
 /**
