@@ -67,6 +67,8 @@
 		  <ul>
 			<li><?php echo HTML::anchor("page/links", "Liens"); ?></li>
 		  </ul>
+		  <a href="https://twitter.com/ace_ulb" class="twitter-follow-button" data-show-count="false" data-lang="fr">Follow @ace_ulb</a>
+		  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 	  </div> 
 	  <div class="content">
