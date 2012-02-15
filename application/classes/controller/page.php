@@ -240,5 +240,65 @@ class Controller_Page extends Controller_Template {
 	$view = View::factory('page/heresie');
 	$this->template->set('content', $view);
   }
+
+  private function create_zip($files = array(),$destination = '',$overwrite = true) {
+	if(file_exists($destination) && !$overwrite) { return false; }
+	$valid_files = array();
+	if(is_array($files)) {
+	  foreach($files as $file) {
+		if(file_exists($file)) {
+		  $valid_files[] = $file;
+		}
+	  }
+	}
+	if(count($valid_files)) {
+	  $zip = new ZipArchive();
+	  if($zip->open($destination,$overwrite ? ZIPARCHIVE::OVERWRITE : ZIPARCHIVE::CREATE) !== true) {
+		return false;
+	  }
+	  foreach($valid_files as $file) {
+		$new_filename = substr($file,strrpos($file,'/') + 1);
+		$zip->addFile($file,$new_filename);
+	  }
+	  //debug
+	  //echo 'The zip archive contains ',$zip->numFiles,' files with a status of ',$zip->status;
+	  $zip->close();
+	  return file_exists($destination);
+	}
+	else {
+	  return false;
+	}
+  }
+  
+  public function action_vlecks() {
+	$view = View::factory('page/vlecks');
+
+	$names = array();
+	$dir = "public/listes/vlecks";
+	$lists = scandir($dir);
+	$ignore = array(".", "..", ".gitignore", "listesvlecks.zip");
+	foreach ($ignore as $i)
+	  unset($lists[array_search($i ,$lists)]);
+	$lists = array_values($lists);
+	unset($i);
+
+	$to_zip = array();
+	foreach($lists as $i) {
+	  $to_zip[] = $dir . "/" . $i;
+	}
+	$result = $this->create_zip($to_zip,'public/listes/vlecks/listesvlecks.zip');
+
+	foreach ($lists as $list) {
+	  $tmp = preg_replace("/\\.[^.\\s]{3,4}$/", "", $list);
+	  $tmp = explode(" ", $tmp);
+	  $tmp = str_replace("_", " ", $tmp);
+	  $names[] = $tmp[0];
+	}
+	
+	$view->set('zip_created', $result);
+	$view->set('lists', $lists);
+	$view->set('names', $names);
+	$this->template->set('content', $view);
+  }
 }
 ?>
