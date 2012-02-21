@@ -83,6 +83,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
 	'base_url'   => '/~laurent/ace-ulb/',
+	'index_file' => FALSE,
 	'profile'    => (Kohana::$environment !== Kohana::PRODUCTION),
 	//	'caching'    => (Kohana::$environment === Kohana::PRODUCTION)
 ));

@@ -4,7 +4,7 @@ SetEnv PHP_VER 5_3
 RewriteEngine On
 
 # Installation directory
-RewriteBase /
+RewriteBase /~laurent/ace-ulb/
 
 # Protect hidden files from being viewed
 <Files .*>
