@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `Persons` (
 CREATE TABLE IF NOT EXISTS `Users` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Password` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Password` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Status` varchar(50)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `PersonId` int(11) NOT NULL,
   `CercleId` int(11) NOT NULL,
