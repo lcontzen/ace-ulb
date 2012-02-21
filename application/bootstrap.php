@@ -123,3 +123,22 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'page',
 		'action'     => 'index',
 	));
+
+/**
+ * Cookie
+ */
+// Set the magic salt to add to a cookie
+Cookie::$salt = 'fjsdijeihdfredtgugfuyegwufewgwb';
+// Set the number of seconds before a cookie expires
+Cookie::$expiration = DATE::WEEK; // by default until the browser close
+// Restrict the path that the cookie is available to
+//Cookie::$path = '/';
+// Restrict the domain that the cookie is available to
+//Cookie::$domain = 'www.mydomain.com';
+// Only transmit cookies over secure connections
+//Cookie::$secure = TRUE;
+// Only transmit cookies over HTTP, disabling Javascript access
+//Cookie::$httponly = TRUE;
+
+// Store sessions in database
+Session::$default = 'database'
