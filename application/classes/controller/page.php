@@ -1,23 +1,23 @@
 <?php
 defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Page extends Controller_Template {
+class Controller_Page extends Controller_Template_Aceulb {
 
-  public $template = 'template';
-  
   public function action_index() {
 	$view = View::factory('page/index');
+	$this->template->title .= ' - Accueil';
 	$this->template->set('content', $view);
   }
 
   public function action_comite() {
 	$view = View::factory('page/comite');
+	$this->template->title .= ' - Comité 2011-2012';
 	$this->template->set('content', $view);
   }
 
   public function action_contact() {
 	$view = View::factory('page/contact');
-
+	$this->template->title .= ' - Contact';
 	$form = array(
 				  'contact_name' => '',
 				  'contact_email' => '',
@@ -65,12 +65,14 @@ class Controller_Page extends Controller_Template {
 
   public function action_photos() {
 	$view = View::factory('page/photos');
+	$this->template->title .= ' - Photos';
 	$this->template->set('content', $view);
   }
 
   public function action_listesace() {
 	$view = View::factory('page/listesace');
-
+	$this->template->title .= ' - Listes ACE';
+	
 	$names = array();
 	$dir = "public/listes/ace";
 	$lists = scandir($dir);
@@ -93,33 +95,39 @@ class Controller_Page extends Controller_Template {
 
   public function action_tds() {
 	$view = View::factory('page/tds');
+	$this->template->title .= ' - Agenda des TDs';
 	$this->template->set('content', $view);
   }
   
   public function action_bals() {
 	$view = View::factory('page/bals');
+	$this->template->title .= ' - Agenda des bals';
 	$this->template->set('content', $view);
   }
 
   public function action_quetesociale() {
 	$view = View::factory('page/quetesociale');
+	$this->template->title .= ' - Quête sociale';
 	$this->template->set('content', $view);
   }
 
   public function action_ntv() {
 	$view = View::factory('page/ntv');
+	$this->template->title .= ' - Nuit Théodore Verhaegen';
 	$this->template->set('content', $view);
   }
 
   public function action_links() {
 	$cercles = new Model_Links();
 	$view = View::factory('page/links');
+	$this->template->title .= ' - Liens';
 	$view->set('cercles', $cercles->get_informations());
 	$this->template->set('content', $view);
   }
 
   public function action_heresie() {
 	$view = View::factory('page/heresie');
+	$this->template->title .= ' - Hérésie';
 	$this->template->set('content', $view);
   }
 
@@ -154,7 +162,8 @@ class Controller_Page extends Controller_Template {
   
   public function action_vlecks() {
 	$view = View::factory('page/vlecks');
-
+	$this->template->title .= ' - Listes Vlecks';
+	
 	$names = array();
 	$dir = "public/listes/vlecks";
 	$lists = scandir($dir);
