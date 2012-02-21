@@ -1,7 +1,8 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Controller_Error extends Controller_Template_Nobrand {
+class Controller_Error extends Controller_Template_Website {
   public function before() {
-	if (Request::$initial !== Rquest::$current) {
+	parent::before();
+	if (Request::$initial !== Request::$current) {
 	  if ($message = rawurldecode($this->request->param('message'))) {
 		$this->template->message = $message;
 	  }
