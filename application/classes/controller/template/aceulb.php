@@ -5,7 +5,7 @@ class Controller_Template_Aceulb extends Controller_Template {
   public function before() {
 	parent::before();
 	if ($this->auto_render) {
-	  $this->template->title = '';
+	  $this->template->title = 'Association des Cercles Etudiants';
 	  $this->template->content = '';
 	  $this->template->styles = array();
 	  $this->template->scripts = array(); 
