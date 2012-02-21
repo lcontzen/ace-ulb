@@ -141,4 +141,4 @@ Cookie::$expiration = DATE::WEEK; // by default until the browser close
 //Cookie::$httponly = TRUE;
 
 // Store sessions in database
-Session::$default = 'database'
+Session::$default = 'database';
