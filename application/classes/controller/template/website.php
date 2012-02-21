@@ -30,3 +30,4 @@ class Controller_Template_Website extends Controller_Template {
 	parent::after();
   }
 }
+?>
