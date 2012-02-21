@@ -1,3 +1,5 @@
+Options All -Indexes -Multiviews
+
 SetEnv PHP_VER 5_3
 
 # Turn on URL rewriting
