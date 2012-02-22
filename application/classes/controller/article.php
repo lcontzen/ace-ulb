@@ -1,9 +1,10 @@
 <?php defined('SYSPATH') or die('No direct access allowed.');
 
 class Controller_Article extends Controller_Template_Aceulb {
-  public function action_index() {
+  public function action_view() {
+	$slug = $this->request->param('slug');
 	$article = ORM::factory('article')
-	  ->where('slug', '=', 'index')
+	  ->where('slug', '=', $slug)
 	  ->find();
 	if ($article->loaded()) {
 	  $view = View::factory('article/index');
