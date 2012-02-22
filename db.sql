@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `ordres` (
 
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `body` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `author_id` int(11) NOT NULL,
