@@ -13,7 +13,7 @@ class Model_User extends ORM {
 									 ),
 				 );
   }
-
+  
   public function filters() {
 	return array(
 				 'password' => array(
@@ -21,11 +21,11 @@ class Model_User extends ORM {
 									 ),
 				 );
   }
-
+  
   public function username_available($username) {
-	return ORM::factory('user', array('username' => $username))->loaded();
+	return !ORM::factory('user', array('username' => $username))->loaded();
   }
-
+  
   public function hash_password($password) {
 	return sha1($password);
   }
