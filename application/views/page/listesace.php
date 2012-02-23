@@ -10,12 +10,13 @@
 <h3>Listes par Cercle</h3>
 <div class="row" id="test">
 <?php
+   $count = count($lists);
    for ($i = 0; $i < 3; $i++) {
 ?>
 	 <div class="span5">
 	   <ul>
 		 <?php
-		   for ($j = ($i *10); $j < ($i + 1)*10; $j++) {
+	 	   for ($j = ($i *11); ($j < ($i + 1)*11) && $j < $count; $j++) {
 		 ?>
 			<li><?php echo HTML::file_anchor('public/listes/ace/'.$lists[$j], $names[$j]); ?></li>
 		<?php
