@@ -1,15 +1,47 @@
-<form action="<?php URL::site('/user'); ?>" method="post" accept-charset="utf-8">
-    <label for="username">Username:</label>
-    <input id="username" type="text" name="username" value="<?php Arr::get($values, 'username'); ?>" />
-    <label for="username" class="error"><?php Arr::get($errors, 'username'); ?>
+<h2>Create a New User</h2>
+<?php if ($message) : ?>
+    <h3 class="message">
+        <?php echo $message; ?>
+    </h3>
+<?php endif; ?>
  
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" value="<?php Arr::get($values, 'password'); ?>" />
-    <label for="password" class="error"><?php Arr::get($errors, 'password'); ?>
+<?php echo Form::open('user/create'); ?>
  
-    <label for="password_confirm">Repeat Password:</label>
-    <input id="password_confirm" type="password" name="_external[password_confirm]" value="<?php Arr::path($values, '_external.password_confirm'); ?>" />
-    <label for="password_confirm" class="error"><?php Arr::path($errors, '_external.password_confirm'); ?>
+<?php echo Form::label('username', 'Username'); ?>
+<?php echo Form::input('username', HTML::chars(Arr::get($_POST, 'username'))); ?>
+<div class="error">
+    <?php if ($errors) :
+   	echo Arr::get($errors, 'username');
+	endif; ?>
+</div>
  
-    <button type="submit">Create</button>
-</form>
+<?php echo Form::label('email', 'Email Address'); ?>
+<?php echo Form::input('email', HTML::chars(Arr::get($_POST, 'email'))); ?>
+<div class="error">
+    <?php
+	  if ($errors) :
+		echo Arr::get($errors, 'email');
+	endif; ?>
+</div>
+ 
+<?php echo Form::label('password', 'Password'); ?>
+<?php echo Form::password('password'); ?>
+<div class="error">
+    <?php if ($errors) :
+	  echo Arr::path($errors, '_external.password');
+	endif; ?>
+</div>
+ 
+<?php echo Form::label('password_confirm', 'Confirm Password'); ?>
+<?php echo Form::password('password_confirm'); ?>
+<div class="error">
+    <?php if ($errors) :
+	  echo Arr::path($errors, '_external.password_confirm');
+	endif; ?>
+</div>
+ 
+<?php echo Form::submit('create', 'Create User'); ?>
+<?php echo Form::close(); ?>
+ 
+<p>Or <?php echo HTML::anchor('user/login', 'login'); ?> if you have an account already.</p>
+
