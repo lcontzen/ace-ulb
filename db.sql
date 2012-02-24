@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `description` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `uniq_name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
  
 INSERT INTO `roles` (`id`, `name`, `description`) VALUES(1, 'login', 'Login privileges, granted after account confirmation');
 INSERT INTO `roles` (`id`, `name`, `description`) VALUES(2, 'admin', 'Administrative user, has access to everything.');
@@ -16,19 +16,22 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
   `role_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY  (`user_id`,`role_id`),
   KEY `fk_role_id` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
  
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `email` varchar(127) NOT NULL,
   `username` varchar(32) NOT NULL DEFAULT '',
   `password` varchar(64) NOT NULL,
+  `status` varchar(50)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `person_id` int(11) NOT NULL,
+  `cercle_id` int(11) NOT NULL,
   `logins` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `last_login` int(10) UNSIGNED,
   PRIMARY KEY  (`id`),
-  UNIQUE KEY `uniq_username` (`username`),
-  UNIQUE KEY `uniq_email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+  FOREIGN KEY (`person_id`) REFERENCES persons(`id`),
+  FOREIGN KEY (`cercle_id`) REFERENCES cercles(`id`),
+  UNIQUE KEY `uniq_username` (`username`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
  
 CREATE TABLE IF NOT EXISTS `user_tokens` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -41,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `user_tokens` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `uniq_token` (`token`),
   KEY `fk_user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
  
 ALTER TABLE `roles_users`
   ADD CONSTRAINT `roles_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
