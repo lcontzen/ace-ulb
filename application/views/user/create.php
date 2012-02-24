@@ -15,15 +15,33 @@
 	endif; ?>
 </div>
  
-<?php echo Form::label('email', 'Email Address'); ?>
-<?php echo Form::input('email', HTML::chars(Arr::get($_POST, 'email'))); ?>
+<?php echo Form::label('status', 'Status'); ?>
+<?php echo Form::input('status', HTML::chars(Arr::get($_POST, 'status'))); ?>
 <div class="error">
     <?php
 	  if ($errors) :
-		echo Arr::get($errors, 'email');
+		echo Arr::get($errors, 'status');
 	endif; ?>
 </div>
- 
+
+<?php echo Form::label('person_id', 'Person Id'); ?>
+<?php echo Form::input('person_id', HTML::chars(Arr::get($_POST, 'person_id'))); ?>
+<div class="error">
+    <?php
+	  if ($errors) :
+		echo Arr::get($errors, 'person_id');
+	endif; ?>
+</div>
+
+<?php echo Form::label('cercle_id', 'Cercle Id'); ?>
+<?php echo Form::input('cercle_id', HTML::chars(Arr::get($_POST, 'cercle_id'))); ?>
+<div class="error">
+    <?php
+	  if ($errors) :
+		echo Arr::get($errors, 'cercle_id');
+	endif; ?>
+</div>
+
 <?php echo Form::label('password', 'Password'); ?>
 <?php echo Form::password('password'); ?>
 <div class="error">

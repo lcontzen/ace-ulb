@@ -22,7 +22,9 @@ class Controller_User extends Controller_Template_Aceulb {
 		$user->create_user($this->request->post(), array(
 														 'username',
 														 'password',
-														 'email'
+														 'status',
+														 'person_id',
+														 'cercle_id'
 														 ));
 		$user->add('roles', ORM::factory('role', array('name' => 'login' )));
 		$_POST = array();
