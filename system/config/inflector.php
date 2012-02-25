@@ -54,7 +54,7 @@ return array(
 		'clothes' => 'clothing',
 		'man' => 'men',
 		'movie' => 'movies',
-		'person' => 'people',
+		/* 'person' => 'people', */
 		'woman' => 'women',
 		'mouse' => 'mice',
 		'goose' => 'geese',
