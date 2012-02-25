@@ -59,4 +59,23 @@ class Controller_User extends Controller_Template_Aceulb {
 	Auth::instance()->logout();
 	$this->request->redirect('user/login');
   }
+
+  public function action_promoteadmin() {
+	$user = Auth::instance()->get_user();
+	$dbuser = ORM::factory('user')
+	  ->where('id', '=', $user->id)
+	  ->find();
+	if ($dbuser->loaded()) {
+	  if (!Auth::instance()->logged_in('admin')) {
+		try {
+		  $dbuser->add('roles', ORM::factory('role', array('name' => 'admin')));
+		} catch (ORM_Validation_Exception $e) {
+		  echo $e;
+		}
+	  }
+	}
+	else {
+	  echo 'failed';
+	}
+  }
 }
