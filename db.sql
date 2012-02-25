@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `slug` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `body` BLOB NOT NULL,
+  `body` LONGTEXT NOT NULL,
   `author_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`author_id`) REFERENCES users(`id`)
