@@ -3,4 +3,5 @@
 </div>
 <ul>
   <li><?php echo HTML::anchor('admin/adduser', 'Add new user'); ?></li>
+  <li><?php echo HTML::anchor('admin/addnews', 'Create new news'); ?></li>
 </ul>
