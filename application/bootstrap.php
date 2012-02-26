@@ -117,6 +117,13 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+Route::set('admin', 'admin(/<action>(/<id>))')
+->defaults(array(
+				 'controller' => 'admin',
+				 'action' => 'index',
+				 'id' => '',
+				 ));
+
 Route::set('article', 'article/view(/<slug>)')
 ->defaults(array(
 				 'controller' => 'article',
