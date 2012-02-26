@@ -34,6 +34,7 @@
 	  <b>Samedi 10 Mars : </b> <br />
 	  <b>Vendredi 23 Mars :</b> <br />
 	  <br />
+	  <br />
 	  <b>Vendredi 30 Mars :</b>
 	</p>
   </div>
@@ -47,6 +48,7 @@
 	  CM <br />
 	  CHAA/CdH/CROM <br />
 	  ISEP/KINE <br />
+	  CPSY <br />
 	  CARé
 	</p>
   </div>

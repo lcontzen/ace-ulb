@@ -78,7 +78,7 @@
 		</tr>
 		<tr>
 		  <td> <b>Lundi 23/04</b> <br /> CdS </td>
-		  <td> <b>Mardi 24/04</b> <br /> CK </td>
+		  <td> <b>Mardi 24/04</b> <br /> CK + PSYCHO </td>
 		  <td> <b>Mercredi 25/04</b> <br /> C$ </td>
 		  <td> <b>Jeudi 26/04</b> <br /> AGRO </td>
 		</tr>
