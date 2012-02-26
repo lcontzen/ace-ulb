@@ -129,3 +129,34 @@ CREATE TABLE IF NOT EXISTS `vlecks` (
   FOREIGN KEY (`ordre_id`) REFERENCES ordres(`id`),
   FOREIGN KEY (`person_id`) REFERENCES persons(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('ACE', 'Association des Cercles Etudiants', 'public/images/logoACE.jpg', 'http://www.ace-ulb.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('AGRO', 'Cercle des BioIngénieurs', 'public/images/logos/agro.png', 'http://www.cercle-agro.be/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CARé', 'Cercle des Architectes Réunis', 'public/images/logos/care.jpg', 'http://www.facebook.com/groups/400216605564/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CD', 'Cercle de Droit', 'public/images/logos/cd.png', 'http://www.cerclededroit.be/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CdH', "Cercle d'Histoire", 'public/images/logos/cdh.png', 'http://www.cerclehistoire.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CdS', 'Cercle des Sciences', 'public/images/logos/cds.jpg', 'http://www.cercledessciences.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CEBULB', "Cercle des Étudiants Borains de l'ULB", 'public/images/logos/cebulb.png', 'http://www.cebulb.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CECS', 'Cercle des Étudiants du Centre et ses Sympathisants', 'public/images/logos/cecs.jpg', 'https://sites.google.com/site/cecsulb/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CELB', 'Cercle des Étudiants Luxembourgeois à Bruxelles', 'public/images/logos/celb.jpg', 'http://www.celb.lu');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CePHA', 'Cercle des Étudiants en Pharmacie', 'public/images/logos/cepha.jpg', 'http://dev.ulb.ac.be/student/cepha/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CGEO', 'Cercle de Géographie et de Géologie', 'public/images/logos/cgeo.jpg', 'http://www.cgeo.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CHAA', "Cercle d'Histoire de l'Art et Archéologie", 'public/images/logos/chaa.png', 'http://www.chaa.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('Chimacienne', 'Cercle de la Chimacienne de Bruxelles', 'public/images/logos/chimacienne.png', 'http://chimacienne-bxl.e-monsite.com/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CI', 'Cercle Informatique', 'public/images/logos/ci.jpg', 'http://www.cerkinfo.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CIGA', 'Cercle des Infirmiers Gradués et Accoucheuses', 'public/images/logos/ciga.png', 'http://www.ulb.ac.be/students/ciga/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CJC', 'Cercle de Journalisme et Communication', 'public/images/logos/cjc.jpg', 'http://www.cjculb.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CK', 'Cercle de Kinésithérapie', 'public/images/logos/ck.png', 'http://www.cerclekine.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CM', 'Cercle de Médecine', 'public/images/logos/cm.png', 'http://www.cercle-medecine.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CP', 'Cercle Polytechnique', 'public/images/logos/cp.png', 'http://www.cerclepolytechnique.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CPL', 'Cercle de Philosophie et Lettres', 'public/images/logos/cpl.jpg', 'http://www.cercle-philo.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CPS', 'Cercle des Étudiants en Sciences Politiques et Sociales', 'public/images/logos/cps.png', 'http://www.cpsulb.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CPSY', 'Cercle de Psychologie', 'public/images/logos/cpsy.png', 'http://www.students-psycho.site.ulb.ac.be/CPSY/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CROM', 'Cercle de Romanes', 'public/images/logos/crom.png', 'http://www.romanes.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CS', 'Cercle Solvay', 'public/images/logos/cs.png', 'http://www.cercle-solvay.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('FRONTA', 'Cercle La Frontalière', 'public/images/logos/fronta.png', 'http://www.lafronta.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('ISEP', "Cercle d'Éducation Physique", 'public/images/logos/isep.png', 'http://sites.google.com/site/cercleisep/');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('La LUX', 'Cercle des Étudiants de la Province du Luxembourg', 'public/images/logos/lux.jpg', 'http://www.luxbxl.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('Librex', 'Cercle du Libre Examen', 'public/images/logos/librex.png', 'http://www.librex.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('Namuroise', 'Cercle de la Namuroise de Bruxelles', 'public/images/logos/nam.jpg', 'http://www.namuroise-bxl.be');
+INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('Semeur', 'Cercle des étudiants du pays de Charleroi et de Thudinie', 'public/images/logos/semeur.png', 'http://www.lesemeur.be');
