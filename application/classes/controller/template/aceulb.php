@@ -2,6 +2,12 @@
 class Controller_Template_Aceulb extends Controller_Template {
   public $template = 'template/aceulb';
 
+  public function check_admin_status() {
+	if (!Auth::instance()->logged_in('admin')) {
+	  $this->request->redirect('user/login');
+	}
+  }
+
   public function before() {
 	parent::before();
 	if ($this->auto_render) {
