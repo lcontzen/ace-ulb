@@ -12,6 +12,12 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	$view = View::factory('admin/adduser');
 	$message = '';
 	$errors = '';
+	$cercles = ORM::factory('cercle')
+	  ->find_all();
+	$cercles_var = array();
+	foreach ($cercles as $cercle) {
+	  $cercles_var[$cercle->id] = $cercle->name;
+	}
 	if (HTTP_Request::POST == $this->request->method()) {
 	  try {
 		$person = ORM::factory('person');
@@ -36,6 +42,7 @@ class Controller_Admin extends Controller_Template_Aceulb {
 		$errors = $e->errors('models');
 	  }
 	}
+	$view->set('cercles', $cercles_var);
 	$view->set('message', $message);
 	$view->set('errors', $errors);
 	$this->template->set('content', $view);

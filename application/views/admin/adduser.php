@@ -51,17 +51,15 @@
 	  </span>
 	</div>  
   </div>
+
   <div class="clearfix">
-	<?php echo Form::label('cercle_id', 'Cercle Id'); ?>
+	<?php echo Form::label('cercle_id', 'Cercle'); ?>
 	<div class="input">
-	  <?php echo Form::input('cercle_id', HTML::chars(Arr::get($_POST, 'cercle_id')), array('class' => 'xlarge', 'size' => '30', 'type' => 'text')); ?>
-	  <span class="error">
-		<?php if ($errors) :
-			echo Arr::get($errors, 'cercle_id');
-		  endif; ?>
-	  </span>
+	  <?php echo Form::select('cercle_id', $cercles); ?>
 	</div>
   </div>
+  
+
   <div class="clearfix">
 	<?php echo Form::label('password', 'Password'); ?>
 	<div class="input">
