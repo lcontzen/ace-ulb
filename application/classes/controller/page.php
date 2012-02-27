@@ -5,6 +5,12 @@ class Controller_Page extends Controller_Template_Aceulb {
 
   public function action_index() {
 	$view = View::factory('page/index');
+	$news = ORM::factory('article')
+	  ->where('type', '=', 'news')
+	  ->order_by('id', 'desc')
+	  ->limit(3)
+	  ->find_all();
+	$view->set('news', $news);
 	$this->template->title .= ' - Accueil';
 	$this->template->set('content', $view);
   }
