@@ -33,7 +33,10 @@ class Controller_Template_Aceulb extends Controller_Template {
 	  if (Auth::instance()->logged_in('admin')) {
 		  $dropdownmenu = View::factory('template/dropdownmenuadmin');
 		  $this->template->set('dropdownmenu', $dropdownmenu);
-		}
+	  } else if (Auth::instance()->logged_in('login')) {
+		  $dropdownmenu = View::factory('template/dropdownmenuuser');
+		  $this->template->set('dropdownmenu', $dropdownmenu);
+	  }
 	  $this->template->styles = array_merge($this->template->styles, $styles);
 	  $this->template->scripts = array_merge($this->template->scripts, $scripts);
 	}
