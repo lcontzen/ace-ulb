@@ -5,7 +5,7 @@
 <div><strong><em><?php echo $message; ?></em></strong></div>
 <?php endif; ?>
 
-<?php echo Form::open('admin/adduser'); ?>
+<?php echo Form::open('user/add'); ?>
 <fieldset>
   <div class="clearfix">
 	<?php echo Form::label('first_name', 'Prénom'); ?>
@@ -83,7 +83,7 @@
 	</div>
   </div>
   <div class="actions">
-	<?php echo Form::submit('adduser', 'Add User'); ?>
+	<?php echo Form::submit('add', 'Add User'); ?>
   </div>
 </fieldset>
 <?php echo Form::close(); ?>
