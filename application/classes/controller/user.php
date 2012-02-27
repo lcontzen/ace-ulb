@@ -33,6 +33,19 @@ class Controller_User extends Controller_Template_Aceulb {
 	$this->request->redirect('user/login');
   }
 
+  public function action_view() {
+	$this->check_admin_status();
+	$view = View::factory('user/view');
+	$id = $this->request->param('id');
+	$user = ORM::factory('user')
+	  ->where('id', '=', $id)
+	  ->find();
+	if ($user->loaded()) {
+	  $view->set('user', $user);
+	}
+	$this->template->set('content', $view);
+  }
+
   public function action_promoteadmin() {
 	$user = Auth::instance()->get_user();
 	$dbuser = ORM::factory('user')
