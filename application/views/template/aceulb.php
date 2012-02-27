@@ -26,6 +26,9 @@
               <li><?php echo HTML::anchor("page/photos", "Photos"); ?></li>
               <li><?php echo HTML::anchor("page/contact", "Contact"); ?></li>
 			</ul>
+			<?php if (isset($dropdownmenu)) {
+			  echo $dropdownmenu;
+			  } ?>
           </div>
 		</div>
       </div> 

@@ -30,6 +30,10 @@ class Controller_Template_Aceulb extends Controller_Template {
 					   'public/theme/js/bootstrap-dropdown.js',
 					   'public/theme/js/application.js',
 					   );
+	  if (Auth::instance()->logged_in('admin')) {
+		  $dropdownmenu = View::factory('template/dropdownmenuadmin');
+		  $this->template->set('dropdownmenu', $dropdownmenu);
+		}
 	  $this->template->styles = array_merge($this->template->styles, $styles);
 	  $this->template->scripts = array_merge($this->template->scripts, $scripts);
 	}
