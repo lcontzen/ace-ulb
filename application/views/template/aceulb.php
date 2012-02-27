@@ -28,7 +28,11 @@
 			</ul>
 			<?php if (isset($dropdownmenu)) {
 			  echo $dropdownmenu;
-			  } ?>
+			  } else {?>
+			<ul class="nav secondary-nav">
+			  <li><?php	echo HTML::anchor('user/login', 'Login');?></li>
+			</ul>
+			<?php } ?>
           </div>
 		</div>
       </div> 
