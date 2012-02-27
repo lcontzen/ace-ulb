@@ -27,8 +27,8 @@ class Controller_Template_Aceulb extends Controller_Template {
 	  $scripts = array(
 					   'public/theme/js/jquery-1.5.2.min.js',
 					   'public/theme/js/prettify.js',
-					   'public/theme/js/application.js',
 					   'public/theme/js/bootstrap-dropdown.js',
+					   'public/theme/js/application.js',
 					   );
 	  $this->template->styles = array_merge($this->template->styles, $styles);
 	  $this->template->scripts = array_merge($this->template->scripts, $scripts);
