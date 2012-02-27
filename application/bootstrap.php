@@ -124,6 +124,13 @@ Route::set('admin', 'admin(/<action>(/<id>))')
 				 'id' => '',
 				 ));
 
+Route::set('user', 'user/<action>(/<id>)')
+->defaults(array(
+				 'controller' => 'user',
+				 'action' => 'index',
+				 'id' => '',
+				 ));
+
 Route::set('article', 'article/view(/<slug>)')
 ->defaults(array(
 				 'controller' => 'article',
