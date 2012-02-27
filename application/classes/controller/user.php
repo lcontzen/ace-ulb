@@ -12,33 +12,6 @@ class Controller_User extends Controller_Template_Aceulb {
 	$this->template->set('content', $view);
   }
   
-  public function action_create() {
-	$view = View::factory('user/create');
-	$message = '';
-	$errors = '';
-	if (HTTP_Request::POST == $this->request->method()) {
-	  try {
-		$user = ORM::factory('user');
-		$user->create_user($this->request->post(), array(
-														 'username',
-														 'password',
-														 'status',
-														 'person_id',
-														 'cercle_id'
-														 ));
-		$user->add('roles', ORM::factory('role', array('name' => 'login' )));
-		$_POST = array();
-		$message = "You have added '{$user->username}' to the database";
-	  } catch (ORM_Validation_Exception $e) {
-		$message = 'There were errors, please see form below.';
-		$errors = $e->errors('models');
-	  }
-	}
-	$view->set('message', $message);
-	$view->set('errors', $errors);
-	$this->template->set('content', $view);
-  }
-  
   public function action_login() {
 	$view = View::factory('user/login');
 	$message = '';
