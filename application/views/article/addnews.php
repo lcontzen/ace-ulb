@@ -5,7 +5,7 @@
 <div><strong><em><?php echo $message; ?></em></strong></div>
 <?php endif; ?>
 
-<?php echo Form::open('admin/addnews'); ?>
+<?php echo Form::open('article/addnews'); ?>
 <fieldset>
   <div class="clearfix">
 	<?php echo Form::label('slug', 'Slug'); ?>
