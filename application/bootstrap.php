@@ -138,8 +138,9 @@ Route::set('article', 'article/(<action>(/<slug>))')
 				 'slug' => 'index',
 				 ));
 
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+Route::set('default', '(<controller>(/<action>(/<slug>)))')
 	->defaults(array(
 		'controller' => 'page',
-		'action'     => 'index',
+		'action'     => 'view',
+		'slug' => 'index',
 	));

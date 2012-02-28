@@ -15,6 +15,20 @@ class Controller_Page extends Controller_Template_Aceulb {
 	$this->template->set('content', $view);
   }
 
+  public function action_view() {
+	$slug = $this->request->param('slug');
+	if ($slug == 'index') {
+	  $this->request->redirect('page/index');
+	}
+	$view = View::factory('article');
+	$page = ORM::factory('article')
+	  ->where('type', '=', 'page')
+	  ->and_where('slug', '=', $slug)
+	  ->find();
+	$view->set('body', $page->body);
+	$this->template->set('content', $view);
+  }
+
   public function action_comite() {
 	$view = View::factory('page/comite');
 	$this->template->title .= ' - Comité 2011-2012';
