@@ -2,9 +2,8 @@
 
 class Controller_User extends Controller_Template_Aceulb {
   public function action_index() {
-	$view = View::factory('user/info');
+	$view = View::factory('user/index');
 	$user = Auth::instance()->get_user();
-	
 	if (!$user) {
 	  $this->request->redirect('user/login');
 	}
