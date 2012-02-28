@@ -19,7 +19,10 @@ class Controller_User extends Controller_Template_Aceulb {
 	  $remember = array_key_exists('remember', $this->request->post()) ? (bool) $this->request->post('remember') : FALSE;
 	  $user = Auth::instance()->login($this->request->post('username'), $this->request->post('password'), $remember);
 	  if ($user) {
-		$this->request->redirect('user/index');
+		if(Auth::instance()->logged_in('admin'))
+		  $this->request->redirect('admin/index');
+		else
+		  $this->request->redirect('user/index');
 	  } else {
 		$message = 'Login failed';
 	  }
