@@ -20,6 +20,17 @@ class Controller_Article extends Controller_Template_Aceulb {
 	}
   }
 
+  public function action_listnews() {
+	$this->check_admin_status();
+	$view = View::factory('article/listnews');
+	$news = ORM::factory('article')
+	  ->where('type', '=', 'news')
+	  ->order_by('id', 'desc')
+	  ->find_all();
+	$view->set('news', $news);
+	$this->template->set('content', $view);
+  }
+
   public function action_editnews() {
 	$this->check_admin_status();
 	$slug = $this->request->param('slug');
