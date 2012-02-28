@@ -17,7 +17,6 @@ class Model_Article extends ORM {
 								  ),
 				 'body' => array(
 								 array('not_empty'),
-								 array('max_length', array(':value', 2000)),
 								 ),
 				 'author_id' => array(
 									  array('not_empty'),
