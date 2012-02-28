@@ -36,18 +36,18 @@ class Controller_User extends Controller_Template_Aceulb {
 	$this->request->redirect('page/index');
   }
 
-  public function action_view() {
-	$this->check_admin_status();
-	$view = View::factory('user/view');
-	$id = $this->request->param('id');
-	$user = ORM::factory('user')
-	  ->where('id', '=', $id)
-	  ->find();
-	if ($user->loaded()) {
-	  $view->set('user', $user);
-	}
-	$this->template->set('content', $view);
-  }
+  /* public function action_view() { */
+  /* 	$this->check_admin_status(); */
+  /* 	$view = View::factory('user/view'); */
+  /* 	$id = $this->request->param('id'); */
+  /* 	$user = ORM::factory('user') */
+  /* 	  ->where('id', '=', $id) */
+  /* 	  ->find(); */
+  /* 	if ($user->loaded()) { */
+  /* 	  $view->set('user', $user); */
+  /* 	} */
+  /* 	$this->template->set('content', $view); */
+  /* } */
 
   public function action_add() {
 	$this->check_admin_status();
@@ -90,22 +90,56 @@ class Controller_User extends Controller_Template_Aceulb {
 	$this->template->set('content', $view);
   }
 
-  public function action_promoteadmin() {
-	$user = Auth::instance()->get_user();
-	$dbuser = ORM::factory('user')
-	  ->where('id', '=', $user->id)
+  public function action_info() {
+	$this->check_admin_status();
+	$view = View::factory('user/info');
+	$id = $this->request->param('id');
+	$user_to_print = ORM::factory('user')
+	  ->where('id', '=', $id)
 	  ->find();
-	if ($dbuser->loaded()) {
-	  if (!Auth::instance()->logged_in('admin')) {
-		try {
-		  $dbuser->add('roles', ORM::factory('role', array('name' => 'admin')));
-		} catch (ORM_Validation_Exception $e) {
-		  echo $e;
-		}
+	$view->set('user', $user_to_print);
+	$this->template->set('content', $view);
+  }
+
+  public function action_promoteadmin() {
+	$this->check_admin_status();
+	$view = View::factory('user/info');
+	$id = $this->request->param('id');
+	$user_to_promote = ORM::factory('user')
+	  ->where('id', '=', $id)
+	  ->find();
+	if ($user_to_promote->loaded()) {
+	  $is_admin = $user_to_promote->has('roles', ORM::factory('role', array('name' => 'admin')));
+	  if (!$is_admin) {
+		$user_to_promote->add('roles', ORM::factory('role', array('name' => 'admin')));
+		$message = 'User '.$user_to_promote->username.' has been promoted to admin.';
+		$view->set('message', $message);
+	  }
+	  else {
+		$message = 'User '.$user_to_promote->username.' is already admin';
+		$view->set('message', $message);
 	  }
 	}
-	else {
-	  echo 'failed';
-	}
+	$view->set('user', $user_to_promote);
+	$this->template->set('content', $view);
   }
+  
+  /* public function action_promoteadmin() { */
+  /* 	$user = Auth::instance()->get_user(); */
+  /* 	$dbuser = ORM::factory('user') */
+  /* 	  ->where('id', '=', $user->id) */
+  /* 	  ->find(); */
+  /* 	if ($dbuser->loaded()) { */
+  /* 	  if (!Auth::instance()->logged_in('admin')) { */
+  /* 		try { */
+  /* 		  $dbuser->add('roles', ORM::factory('role', array('name' => 'admin'))); */
+  /* 		} catch (ORM_Validation_Exception $e) { */
+  /* 		  echo $e; */
+  /* 		} */
+  /* 	  } */
+  /* 	} */
+  /* 	else { */
+  /* 	  echo 'failed'; */
+  /* 	} */
+  /* } */
 }
