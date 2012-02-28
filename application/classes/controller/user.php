@@ -33,7 +33,7 @@ class Controller_User extends Controller_Template_Aceulb {
 
   public function action_logout() {
 	Auth::instance()->logout();
-	$this->request->redirect('user/login');
+	$this->request->redirect('page/index');
   }
 
   public function action_view() {
