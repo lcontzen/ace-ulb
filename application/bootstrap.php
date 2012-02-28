@@ -131,7 +131,7 @@ Route::set('user', 'user/<action>(/<id>)')
 				 'id' => '',
 				 ));
 
-Route::set('article', 'article/view(/<slug>)')
+Route::set('article', 'article/(<action>(/<slug>))')
 ->defaults(array(
 				 'controller' => 'article',
 				 'action' =>'view',
