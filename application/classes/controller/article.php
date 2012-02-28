@@ -100,6 +100,36 @@ class Controller_Article extends Controller_Template_Aceulb {
 	$this->template->set('content', $view);
   }
 
+  public function action_addpage() {
+	$this->check_admin_status();
+	$view = View::factory('article/addpage');
+	if (HTTP_Request::POST == $this->request->method()) {
+	  try {
+		$author = Auth::instance()->get_user();
+		$news = ORM::factory('article');
+		$values = $this->request->post();
+		$values['type'] = 'page';
+		$values['author_id'] = $author->id;
+		$news->create_article($values, array(
+											 'type',
+											 'slug',
+											 'title',
+											 'body',
+											 'author_id'
+											 ));
+		$_POST = array();
+		$message = "Page created";
+		$view->set('message', $message);
+	  } catch (ORM_Validation_Exception $e) {
+		$message = 'There were errors, please see form below.';
+		$errors = $e->errors('models');
+		$view->set('message', $message);
+		$view->set('errors', $errors);
+	  }
+	}
+	$this->template->set('content', $view);
+  }
+
   public function action_editpage() {
 	$this->check_admin_status();
 	$slug = $this->request->param('slug');
