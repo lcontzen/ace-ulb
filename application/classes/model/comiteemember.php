@@ -8,11 +8,9 @@ class Model_ComiteeMember extends ORM {
 										 array('max_length', array(':value', 200)),
 										 ),
 				 'gsm_number' => array(
-										 array('not_empty'),
 										 array('max_length', array(':value', 64)),
 										 ),
 				 'mail_address' => array(
-										 array('not_empty'),
 										 array('max_length', array(':value', 200)),
 										 ),
 				 'person_id' => array(
