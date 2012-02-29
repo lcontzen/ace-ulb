@@ -25,8 +25,12 @@ class Controller_Page extends Controller_Template_Aceulb {
 	  ->where('type', '=', 'page')
 	  ->and_where('slug', '=', $slug)
 	  ->find();
-	$view->set('page', $page);
-	$this->template->set('content', $view);
+	if ($page->loaded()) {
+	  $view->set('page', $page);
+	  $this->template->set('content', $view);
+	} else {
+	  $this->request->redirect('page/'.$slug);
+	}
   }
 
   public function action_comite() {

@@ -19,12 +19,12 @@
 	  <div class="topbar" data-dropdown="dropdown">
 		<div class="topbar-inner">
           <div class="container">
-			<?php echo HTML::anchor("page/index", "Association des Cercles Etudiants", array("class" => "brand")); ?>
+			<?php echo HTML::anchor("page/view/index", "Association des Cercles Etudiants", array("class" => "brand")); ?>
 			<ul class="nav">
-              <li><?php echo HTML::anchor("page/index", "Home"); ?></li>
-              <li><?php echo HTML::anchor("page/comite", "Comité"); ?></li>
-              <li><?php echo HTML::anchor("page/photos", "Photos"); ?></li>
-              <li><?php echo HTML::anchor("page/contact", "Contact"); ?></li>
+              <li><?php echo HTML::anchor("page/view/index", "Home"); ?></li>
+              <li><?php echo HTML::anchor("page/view/comite", "Comité"); ?></li>
+              <li><?php echo HTML::anchor("page/view/photos", "Photos"); ?></li>
+              <li><?php echo HTML::anchor("page/view/contact", "Contact"); ?></li>
 			</ul>
 			<?php if (isset($dropdownmenu)) {
 			  echo $dropdownmenu;
@@ -43,23 +43,23 @@
 		<div class="well">
 		  <b>Documents</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/listesace", "Listes ACE"); ?></li>
-			<li><?php echo HTML::anchor("page/vlecks", "Listes Vlecks"); ?></li>
-			<li><?php echo HTML::anchor("page/heresie", "Hérésie"); ?></li>
+			<li><?php echo HTML::anchor("page/view/listesace", "Listes ACE"); ?></li>
+			<li><?php echo HTML::anchor("page/view/vlecks", "Listes Vlecks"); ?></li>
+			<li><?php echo HTML::anchor("page/view/heresie", "Hérésie"); ?></li>
 		  </ul>
 		  <b>Agenda</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/tds", "TDs"); ?></li>
-			<li><?php echo HTML::anchor("page/bals", "Bals"); ?></li>
+			<li><?php echo HTML::anchor("page/view/tds", "TDs"); ?></li>
+			<li><?php echo HTML::anchor("page/view/bals", "Bals"); ?></li>
 		  </ul>
 		  <b>Activités</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/quetesociale", "Quête Sociale"); ?></li>
-			<li><?php echo HTML::anchor("page/ntv", "Nuit Théodore Verhaegen"); ?></li>
+			<li><?php echo HTML::anchor("page/view/quetesociale", "Quête Sociale"); ?></li>
+			<li><?php echo HTML::anchor("page/view/ntv", "Nuit Théodore Verhaegen"); ?></li>
 		  </ul> 
 		  <b>Divers</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/links", "Liens"); ?></li>
+			<li><?php echo HTML::anchor("page/view/links", "Liens"); ?></li>
 		  </ul>
 		  <a href="https://twitter.com/ace_ulb" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @ace_ulb</a>
 		  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
