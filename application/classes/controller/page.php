@@ -25,7 +25,7 @@ class Controller_Page extends Controller_Template_Aceulb {
 	  ->where('type', '=', 'page')
 	  ->and_where('slug', '=', $slug)
 	  ->find();
-	$view->set('body', $page->body);
+	$view->set('page', $page);
 	$this->template->set('content', $view);
   }
 

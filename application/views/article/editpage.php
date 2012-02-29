@@ -1,5 +1,6 @@
 <div class="page-header">
-  <h1>Edit page <?php echo $article->title; ?></h1>
+  <h1>Edit page <?php
+   echo HTML::anchor('page/view/'.$article->slug, $article->title); ?></h1>
 </div>
 <?php
   if (isset($message)) {
