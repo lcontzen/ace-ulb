@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Add a new Page</h1>
+  <h1>Add a new Comitee Member</h1>
 </div>
 <?php if (isset($message)) {
   echo '<div><strong><em>' . $message . '</em></strong></div>';
