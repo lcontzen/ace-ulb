@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS `articles` (
 CREATE TABLE IF NOT EXISTS `comiteemembers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `picture_link` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `gsm_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `mail_address` varchar(200)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `gsm_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `mail_address` varchar(200)  CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `person_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`person_id`) REFERENCES persons(`id`)
