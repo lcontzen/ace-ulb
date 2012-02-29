@@ -145,7 +145,6 @@ class Controller_Article extends Controller_Template_Aceulb {
 		$values['id'] = $article->id;
 		$values['slug'] = $article->slug;
 		$values['author_id'] = $article->author_id;
-		echo $article->author_id;
 		$article->values($values, array(
 										'id',
 										'type',
