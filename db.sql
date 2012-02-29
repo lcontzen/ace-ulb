@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   FOREIGN KEY (`author_id`) REFERENCES users(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `comitees_members` (
+CREATE TABLE IF NOT EXISTS `comiteemembers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `picture_link` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `gsm_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -115,10 +115,10 @@ CREATE TABLE IF NOT EXISTS `comitees_members` (
 CREATE TABLE IF NOT EXISTS `functions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cercle_id` int(11) NOT NULL,
-  `comitees_member_id` int(11) NOT NULL,
+  `comiteemember_id` int(11),
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`comitees_member_id`) REFERENCES comitees_members(`id`)
+  FOREIGN KEY (`comiteemember_id`) REFERENCES comiteemembers(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `vlecks` (
