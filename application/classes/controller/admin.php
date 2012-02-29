@@ -41,7 +41,7 @@ class Controller_Admin extends Controller_Template_Aceulb {
   public function action_addfunction() {
 	$this->check_admin_status();
 	$view = View::factory('admin/addfunction');
-		$cercles = ORM::factory('cercle')
+	$cercles = ORM::factory('cercle')
 	  ->find_all();
 	$cercles_var = array();
 	foreach ($cercles as $cercle) {
@@ -66,8 +66,46 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	  }
 	}
 	$view->set('cercles', $cercles_var);
-	$view->set('cercles', $cercles_var);
 	$this->template->set('content', $view);
+  }
+
+  public function action_addflist() {
+	$this->check_admin_status();
+	$view = View::factory('admin/addflist');
+	$cercles = ORM::factory('cercle')
+	  ->find_all();
+	$cercles_var = array();
+	foreach ($cercles as $cercle) {
+	  $cercles_var[$cercle->id] = $cercle->name;
+	}
+	if (HTTP_Request::POST == $this->request->method()) {
+	  try {
+		$functions = $this->request->post('functions');
+		$functions_list = explode(', ', $functions);
+		foreach ($functions_list as $function_item) {
+		  $values = array();
+		  $values['name'] = $function_item;
+		  $values['cercle_id'] = $this->request->post('cercle_id');
+		  $function = ORM::factory('function');
+		  $function->create_function($values, array(
+																   'cercle_id',
+																   'comiteemember_id',
+																   'name'
+																   ));
+		}
+		$_POST = array();
+		$count = count($functions_list);
+		$message = "You have added {$count} functions to the database";
+		$view->set('message', $message);
+	  } catch (ORM_Validation_Exception $e) {
+		$message = 'There were errors, please see form below.';
+		$view->set('message', $message);
+		$errors = $e->errors('models');
+		$view->set('errors', $errors);
+	  }
+	}
+	$view->set('cercles', $cercles_var);
+	$this->template->set('content', $view);	
   }
   
 }
