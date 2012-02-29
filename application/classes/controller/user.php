@@ -2,11 +2,11 @@
 
 class Controller_User extends Controller_Template_Aceulb {
   public function action_index() {
-	$view = View::factory('user/index');
 	$user = Auth::instance()->get_user();
 	if (!$user) {
 	  $this->request->redirect('user/login');
 	}
+	$view = View::factory('user/index');
 	$view->set('user', $user);
 	$this->template->set('content', $view);
   }
@@ -34,20 +34,7 @@ class Controller_User extends Controller_Template_Aceulb {
 	Auth::instance()->logout();
 	$this->request->redirect('page/index');
   }
-
-  /* public function action_view() { */
-  /* 	$this->check_admin_status(); */
-  /* 	$view = View::factory('user/view'); */
-  /* 	$id = $this->request->param('id'); */
-  /* 	$user = ORM::factory('user') */
-  /* 	  ->where('id', '=', $id) */
-  /* 	  ->find(); */
-  /* 	if ($user->loaded()) { */
-  /* 	  $view->set('user', $user); */
-  /* 	} */
-  /* 	$this->template->set('content', $view); */
-  /* } */
-
+  
   public function action_add() {
 	$this->check_admin_status();
 	$view = View::factory('user/add');
@@ -122,23 +109,4 @@ class Controller_User extends Controller_Template_Aceulb {
 	$view->set('user', $user_to_promote);
 	$this->template->set('content', $view);
   }
-  
-  /* public function action_promoteadmin() { */
-  /* 	$user = Auth::instance()->get_user(); */
-  /* 	$dbuser = ORM::factory('user') */
-  /* 	  ->where('id', '=', $user->id) */
-  /* 	  ->find(); */
-  /* 	if ($dbuser->loaded()) { */
-  /* 	  if (!Auth::instance()->logged_in('admin')) { */
-  /* 		try { */
-  /* 		  $dbuser->add('roles', ORM::factory('role', array('name' => 'admin'))); */
-  /* 		} catch (ORM_Validation_Exception $e) { */
-  /* 		  echo $e; */
-  /* 		} */
-  /* 	  } */
-  /* 	} */
-  /* 	else { */
-  /* 	  echo 'failed'; */
-  /* 	} */
-  /* } */
 }
