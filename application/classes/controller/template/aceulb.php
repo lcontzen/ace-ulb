@@ -8,6 +8,12 @@ class Controller_Template_Aceulb extends Controller_Template {
 	}
   }
 
+  public function check_logged_in_status() {
+	if (!Auth::instance()->get_user()) {
+	  $this->redirect->redirect('user/login');
+	}
+  }
+  
   public function before() {
 	parent::before();
 	if ($this->auto_render) {
