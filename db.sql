@@ -97,21 +97,15 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 CREATE TABLE IF NOT EXISTS `comiteemembers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,  
-  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `picture_link` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `cercle_id` int(11) NOT NULL,
+  `function` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci,  
+  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `picture_link` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `gsm_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `mail_address` varchar(200)  CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE IF NOT EXISTS `functions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cercle_id` int(11) NOT NULL,
-  `comiteemember_id` int(11),
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`comiteemember_id`) REFERENCES comiteemembers(`id`)
+  FOREIGN KEY (`cercle_id`) REFERENCES cercles(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `vlecks` (
