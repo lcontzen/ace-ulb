@@ -12,18 +12,19 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	$view = View::factory('admin/addcomiteemember');
 	if (HTTP_Request::POST == $this->request->method()) {
 	  try {
-		$person = ORM::factory('person');
-		$person->create_person($this->request->post(), array(
-															 'first_name',
-															 'last_name'));
+		/* $person = ORM::factory('person'); */
+		/* $person->create_person($this->request->post(), array( */
+		/* 													 'first_name', */
+		/* 													 'last_name')); */
 		$comitee_member = ORM::factory('comiteemember');
 		$values = $this->request->post();
-		$values['person_id'] = $person->id;
+		/* $values['person_id'] = $person->id; */
 		$comitee_member->create_comitees_member($values, array(
+															   'first_name',
+															   'last_name',
 															   'picture_link',
 															   'gsm_number',
 															   'mail_address',
-															   'person_id',
 															   ));
 		$_POST = array();
 		$message = "Comitee member added!";
