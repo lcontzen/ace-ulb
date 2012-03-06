@@ -3,6 +3,14 @@
 class Model_ComiteeMember extends ORM {  
   public function rules() {
 	return array(
+				 'first_name' => array(
+									   array('not_empty'),
+									   array('max_length', array(':value', 50)),
+									   ),
+				 'last_name' => array(
+									  array('not_empty'),
+									  array('max_length', array(':value', 50)),
+									  ),
 				 'picture_link' => array(
 										 array('not_empty'),
 										 array('max_length', array(':value', 200)),
@@ -13,19 +21,16 @@ class Model_ComiteeMember extends ORM {
 				 'mail_address' => array(
 										 array('max_length', array(':value', 200)),
 										 ),
-				 'person_id' => array(
-										 array('not_empty'),
-										 array('max_length', array(':value', 11)),
-										 ),
 				 );
   }
 
   public function labels() {
 	return array(
+				 'first_name' => 'first_name',
+				 'last_name' => 'last_name',
 				 'picture_link' => 'picture_link',
 				 'gsm_number' => 'gsm_number',
 				 'mail_address' => 'mail_address',
-				 'person_id' => 'person_id',
 				 );
   }
 

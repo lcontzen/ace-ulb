@@ -38,13 +38,18 @@ class Model_Auth_User extends ORM {
 			'password' => array(
 				array('not_empty'),
 			),
+			'first_name' => array(
+								  array('not_empty'),
+								  array('max_length', array(':value', 50)),
+								  ),
+			'last_name' => array(
+								  array('not_empty'),
+								  array('max_length', array(':value', 50)),
+								  ),
 			'status' => array(
 							  array('not_empty'),
 							  array('max_length', array(':value', 50)),	
 						  ),
-			'person_id' => array(
-								array('not_empty'),
-								),
 			'cercle_id' => array(
 								array('not_empty'),
 								),
@@ -76,8 +81,9 @@ class Model_Auth_User extends ORM {
 		return array(
 			'username'         => 'username',
 			'password'         => 'password',
+			'first_name' => 'first_name',
+			'last_name' => 'last_name',
 			'status' => 'status',
-			'person_id' => 'person_id',
 			'cercle_id' => 'cercle_id',
 		);
 	}
