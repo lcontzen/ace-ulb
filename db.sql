@@ -22,13 +22,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL DEFAULT '',
   `password` varchar(64) NOT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,  
+  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(50)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `person_id` int(11) NOT NULL,
   `cercle_id` int(11) NOT NULL,
   `logins` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `last_login` int(10) UNSIGNED,
   PRIMARY KEY  (`id`),
-  FOREIGN KEY (`person_id`) REFERENCES persons(`id`),
   FOREIGN KEY (`cercle_id`) REFERENCES cercles(`id`),
   UNIQUE KEY `uniq_username` (`username`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
@@ -53,22 +53,15 @@ ALTER TABLE `roles_users`
 ALTER TABLE `user_tokens`
   ADD CONSTRAINT `user_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
-CREATE TABLE IF NOT EXISTS `persons` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,  
   `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(50)  CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `person_id` int(11) NOT NULL,
   `cercle_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`person_id`) REFERENCES persons(`id`),
   FOREIGN KEY (`cercle_id`) REFERENCES cercles(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -104,12 +97,12 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 CREATE TABLE IF NOT EXISTS `comiteemembers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,  
+  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `picture_link` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `gsm_number` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `mail_address` varchar(200)  CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `person_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`person_id`) REFERENCES persons(`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `functions` (
@@ -124,10 +117,10 @@ CREATE TABLE IF NOT EXISTS `functions` (
 CREATE TABLE IF NOT EXISTS `vlecks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ordre_id` int(11) NOT NULL,
-  `person_id` int(11) NOT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,  
+  `last_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`ordre_id`) REFERENCES ordres(`id`),
-  FOREIGN KEY (`person_id`) REFERENCES persons(`id`)
+  FOREIGN KEY (`ordre_id`) REFERENCES ordres(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('ACE', 'Association des Cercles Etudiants', 'public/images/logoACE.jpg', 'http://www.ace-ulb.be');
