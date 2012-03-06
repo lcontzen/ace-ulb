@@ -7,6 +7,24 @@
 <?php echo Form::open('admin/addcomiteemember'); ?>
 <fieldset>
   <div class="clearfix">
+	<?php echo Form::label('cercle_id', 'Cercle'); ?>
+	<div class="input">
+	  <?php echo Form::select('cercle_id', $cercles); ?>
+	</div>
+  </div>
+  <div class="clearfix">
+	<?php echo Form::label('function', 'Poste'); ?>
+	<div class="input">
+	  <?php echo Form::input('function', NULL, array('class' => 'xlarge', 'size' => '30', 'type' => 'text')); ?>
+	  <span class="error">
+		<?php
+   		  if (isset($errors)) {
+			echo Arr::get($errors, 'function');
+		  } ?>
+	  </span>
+	</div>
+  </div>
+  <div class="clearfix">
 	<?php echo Form::label('first_name', 'First_Name'); ?>
 	<div class="input">
 	  <?php echo Form::input('first_name', NULL, array('class' => 'xlarge', 'size' => '30', 'type' => 'text')); ?>

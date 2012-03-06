@@ -3,16 +3,21 @@
 class Model_ComiteeMember extends ORM {  
   public function rules() {
 	return array(
-				 'first_name' => array(
+				 'cercle_id' => array(
+									  array('not_empty'),
+									  array('max_length', array(':value', 11)),
+									  ),
+				 'function' => array(
 									   array('not_empty'),
 									   array('max_length', array(':value', 50)),
 									   ),
+				 'first_name' => array(
+									   array('max_length', array(':value', 50)),
+									   ),
 				 'last_name' => array(
-									  array('not_empty'),
 									  array('max_length', array(':value', 50)),
 									  ),
 				 'picture_link' => array(
-										 array('not_empty'),
 										 array('max_length', array(':value', 200)),
 										 ),
 				 'gsm_number' => array(
@@ -26,6 +31,8 @@ class Model_ComiteeMember extends ORM {
 
   public function labels() {
 	return array(
+				 'cercle_id' => 'cercle_id',
+				 'function' => 'function',
 				 'first_name' => 'first_name',
 				 'last_name' => 'last_name',
 				 'picture_link' => 'picture_link',
