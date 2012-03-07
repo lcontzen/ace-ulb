@@ -17,7 +17,7 @@ class Controller_Admin extends Controller_Template_Aceulb {
 
   private function _treat_picture($picturefile) {
 	$pic = Image::factory($picturefile);
-	$pic->resize(350, 350, Image::INVERSE);
+	$pic->resize(120, 170);
 	$pic->save();
   }
   
@@ -52,12 +52,14 @@ class Controller_Admin extends Controller_Template_Aceulb {
 																 ));
 		  $tmp = explode('.',$file['picture']['name']);
 		  $ext = $tmp[count($tmp)-1];
-		  $picturefile = Upload::save($file['picture'], $cercle_id.'-'.$comitee_member->id.'.'.$ext, 'public/pics/listes/ace/');
+		  $picture_name = $cercle_id.'-'.$comitee_member->id.'.'.$ext;
+		  $picture_path = 'public/pics/listes/ace/';
+		  $picturefile = Upload::save($file['picture'], $picture_name, $picture_path);
 		  if ( $picturefile === false ) {
 			throw new Exception( 'Unable to save uploaded file!' );
 		  }
 		  $this->_treat_picture($picturefile);
-		  $comitee_member->picture_link = $picturefile;
+		  $comitee_member->picture_link = $picture_path.$picture_name;
 		  $comitee_member->save();
 		  $_POST = array();
 		  $message = "Comitee member added!";
