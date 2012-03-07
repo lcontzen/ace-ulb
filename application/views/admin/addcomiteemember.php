@@ -4,7 +4,7 @@
 <?php if (isset($message)) {
   echo '<div><strong><em>' . $message . '</em></strong></div>';
   } ?>
-<?php echo Form::open('admin/addcomiteemember'); ?>
+   <?php echo Form::open('admin/addcomiteemember', array('enctype' => 'multipart/form-data')); ?>
 <fieldset>
   <div class="clearfix">
 	<?php echo Form::label('cercle_id', 'Cercle'); ?>
@@ -49,15 +49,9 @@
 	</div>
   </div>
   <div class="clearfix">
-	<?php echo Form::label('picture_link', 'Picture link'); ?>
+	<?php echo Form::label('picture', 'Picture'); ?>
 	<div class="input">
-	  <?php echo Form::input('picture_link', NULL, array('class' => 'xlarge', 'size' => '30', 'type' => 'text')); ?>
-	  <span class="error">
-		<?php
-   		  if (isset($errors)) {
-			echo Arr::get($errors, 'picture_link');
-		  } ?>
-	  </span>
+	  <?php echo Form::file('picture'); ?>
 	</div>
   </div>
   <div class="clearfix">
