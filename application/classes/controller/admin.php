@@ -13,7 +13,13 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	  ->and_where('function', '=', $function)
 	  ->find()
 	  ->loaded();
-  } 
+  }
+
+  private function _treat_picture($picturefile) {
+	$pic = Image::factory($picturefile);
+	$pic->resize(350, 350, Image::INVERSE);
+	$pic->save();
+  }
   
   public function action_addcomiteemember() {
 	$this->check_admin_status();
@@ -24,7 +30,11 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	foreach ($cercles as $cercle) {
 	  $cercles_var[$cercle->id] = $cercle->name;
 	}
-	if (HTTP_Request::POST == $this->request->method()) {
+	$file = Validation::factory($_FILES);
+	$file->rule('picture', 'Upload::not_empty');
+	$file->rule('picture', 'Upload::image');
+	$file->rule('picture', 'Upload::size', array(':value', '3M'));
+	if (HTTP_Request::POST == $this->request->method() && $file->check()) {
 	  try {
 		$cercle_id = $this->request->post('cercle_id');
 		$function = $this->request->post('function');
@@ -40,6 +50,15 @@ class Controller_Admin extends Controller_Template_Aceulb {
 																 'gsm_number',
 																 'mail_address',
 																 ));
+		  $tmp = explode('.',$file['picture']['name']);
+		  $ext = $tmp[count($tmp)-1];
+		  $picturefile = Upload::save($file['picture'], $cercle_id.'-'.$comitee_member->id.'.'.$ext, 'public/pics/listes/ace/');
+		  if ( $picturefile === false ) {
+			throw new Exception( 'Unable to save uploaded file!' );
+		  }
+		  $this->_treat_picture($picturefile);
+		  $comitee_member->picture_link = $picturefile;
+		  $comitee_member->save();
 		  $_POST = array();
 		  $message = "Comitee member added!";
 		  $view->set('message', $message);
