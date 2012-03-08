@@ -9,9 +9,9 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 	  ->where('name', '=', $name)
 	  ->find()
 	  ->id;
-	echo $cercle_id;
 	$comitee_members = ORM::factory('comiteemember')
 	  ->where('cercle_id', '=', $cercle_id)
+	  ->order_by('id')
 	  ->find_all();
 	$view->set('comitee_name', $name);
 	$view->set('comitee_members', $comitee_members);
