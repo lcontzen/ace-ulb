@@ -124,6 +124,13 @@ Route::set('admin', 'admin(/<action>(/<id>))')
 				 'id' => '',
 				 ));
 
+Route::set('comiteeeditmember', 'comitee/editmember/<id>')
+->defaults(array(
+				 'controller' => 'comitee',
+				 'action' => 'editmember',
+				 'id' => '',
+				 ));
+
 Route::set('comitee', 'comitee/<action>(/<name>)')
 ->defaults(array(
 				 'controller' => 'comitee',
