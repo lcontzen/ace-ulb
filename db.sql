@@ -117,6 +117,23 @@ CREATE TABLE IF NOT EXISTS `vlecks` (
   FOREIGN KEY (`ordre_id`) REFERENCES ordres(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `formquestions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `form_slug` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `number` int(11) NOT NULL,
+  `body` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `formanswers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `form_slug`varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `body` TEXT NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`question_id`) REFERENCES questions(`id`)
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  
 INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('ACE', 'Association des Cercles Etudiants', 'public/images/logoACE.jpg', 'http://www.ace-ulb.be');
 INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('AGRO', 'Cercle des BioIngénieurs', 'public/images/logos/agro.png', 'http://www.cercle-agro.be/');
 INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('CARé', 'Cercle des Architectes Réunis', 'public/images/logos/care.jpg', 'http://www.facebook.com/groups/400216605564/');
