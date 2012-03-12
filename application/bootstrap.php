@@ -117,6 +117,21 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+Route::set('formanswer', 'formanswer/form/<slug>')
+->defaults(array(
+				 'controller' => 'formanswer',
+				 'action' => 'form',
+				 'slug' => '',
+				 ));
+
+
+Route::set('formquestion', 'formquestion/createform/<nbr>')
+->defaults(array(
+				 'controller' => 'formquestion',
+				 'action' => 'createform',
+				 'nbr' => '',
+				 ));
+
 Route::set('admin', 'admin(/<action>(/<id>))')
 ->defaults(array(
 				 'controller' => 'admin',
