@@ -128,10 +128,9 @@ CREATE TABLE IF NOT EXISTS `formquestions` (
 CREATE TABLE IF NOT EXISTS `formanswers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `form_slug`varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `question_id` int(11) NOT NULL,
+  `question_number` int(11) NOT NULL,
   `body` TEXT NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`question_id`) REFERENCES questions(`id`)
+  PRIMARY KEY (`id`)
 )  ENGINE=MyISAM DEFAULT CHARSET=utf8;
   
 INSERT INTO `cercles` (`name`, `description`, `logo_link`, `website_url`) VALUES('ACE', 'Association des Cercles Etudiants', 'public/images/logoACE.jpg', 'http://www.ace-ulb.be');
