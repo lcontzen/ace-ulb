@@ -7,7 +7,7 @@ class Model_Formanswer extends ORM {
 									  array('not_empty'),
 									  array('max_length', array(':value', 50)),
 									  ),
-				 'question_id' => array(
+				 'question_number' => array(
 								   array('not_empty'),
 								   array('max_length', array(':value', 11)),
 								   ),
@@ -20,7 +20,7 @@ class Model_Formanswer extends ORM {
   public function labels() {
 	return array(
 				 'form_slug' => 'form_slug',
-				 'question_id' => 'question_id',
+				 'question_number' => 'question_number',
 				 'body' => 'body',
 				 );
   }
