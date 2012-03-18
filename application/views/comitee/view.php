@@ -1,33 +1,23 @@
 <div class="page-header">
-  <h1>Comité <?php echo $comitee_name; ?></h1>
+   <h1>Comité <?php echo strtoupper($comitee_name); ?></h1>
 </div>
-<table>
-  <tbody>
+
+<div class="row" align="center">
+  <div class="row">
 	<?php
-	  $count = count($comitee_members);
-	  for ($i = 0; $i < $count; $i++) {
-		echo '<tr>';
-		echo '<td> <h3>' . $comitee_members[$i]->function . '</h3><br />';
-		echo HTML::image($comitee_members[$i]->picture_link) . '<br />';
-		echo $comitee_members[$i]->first_name . ' ' . $comitee_members[$i]->last_name . '</td>';
-		$i = $i+1;
-		if ($i < $count) {
-		  echo '<td> <h3>' . $comitee_members[$i]->function . '</h3><br />';
-		  echo HTML::image($comitee_members[$i]->picture_link) . '<br />';
-		  echo $comitee_members[$i]->first_name . ' ' . $comitee_members[$i]->last_name . '</td>';
+   	  $i = 0;
+   	  foreach ($comitee_members as $member) {
+		if ($i > 0 && $i%3 == 0) {
+		  echo '</div>';
+		  echo '<div class="row">';
 		}
+		echo '<div class="span5">';
+		echo "<h3>".$member->function.'<h3>';
+		echo "<p>".HTML::image($member->picture_link, array('alt' => $member->function)).'</p>';
+		echo '<p><b>'.$member->first_name.' '.$member->last_name.'</b><br />';
+		echo "</div>";
 		$i = $i+1;
-		if ($i < $count) {
-		  echo '<td> <h3>' . $comitee_members[$i]->function . '</h3><br />';
-		  echo HTML::image($comitee_members[$i]->picture_link) . '<br />';
-		  echo $comitee_members[$i]->first_name . ' ' . $comitee_members[$i]->last_name . '</td>';
-		  echo '</tr>';
-		}
 	  }
-	  /* foreach($comitee_members as $member) { */
-	  /* 	echo HTML::image($member->picture_link); */
-	  /* 	echo '<br />'; */
-	  /* } */
 	?>
-  </tbody>
-</table>
+  </div>
+</div>
