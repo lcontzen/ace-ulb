@@ -78,6 +78,7 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 			$member->picture_link = $picture_path.$picture_name;
 		  }
 		  $member->save();
+		  $this->request->redirect('comitee/manage');
 		} catch (ORM_Validation_Exception $e) {
 		  $message = 'There were errors, please see form below.';
 		  $view->set('message', $message);
