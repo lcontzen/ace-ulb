@@ -12,7 +12,7 @@
 		  echo '<div class="row">';
 		}
 		echo '<div class="span5">';
-		echo "<h3>".$member->function.'<h3>';
+		echo "<h3>".$member->function.'</h3>';
 		echo "<p>".HTML::image($member->picture_link, array('alt' => $member->function)).'</p>';
 		echo '<p><b>'.$member->first_name.' '.$member->last_name.'</b><br />';
 		echo "</div>";
