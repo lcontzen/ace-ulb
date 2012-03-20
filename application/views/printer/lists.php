@@ -37,7 +37,7 @@
 				echo '</tr>';
 				echo '<tr>';
 			  }
-			  echo '<td>';
+			  echo '<td style="text-align: center">';
 			  echo "<h3>".$member->function.'</h3>';
 			  echo '<p><img src="'.dirname(__FILE__).'/../../../'.$member->picture_link.'" height="170"/></p>';
 			  echo '<p><b>'.$member->first_name.' '.$member->last_name.'</b></p>';
