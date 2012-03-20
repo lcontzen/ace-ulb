@@ -1,6 +1,10 @@
 /* Printing CSS inspired by boom! */
 /* http://www.alistapart.com/articles/boom */
 
+html {
+	font: 9pt;
+}
+
 /* html { */
 /* 	margin: 0; */
 /* 	/\* font: 10pt/1.26 "Gill Sans", sans-serif; *\/ */
