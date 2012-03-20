@@ -39,7 +39,10 @@
 			  }
 			  echo '<td style="text-align: center">';
 			  echo "<h3>".$member->function.'</h3>';
-			  echo '<p><img src="'.dirname(__FILE__).'/../../../'.$member->picture_link.'" height="170"/></p>';
+			  if ($member->picture_link == null)
+				echo '<p><img src="'.dirname(__FILE__).'/../../../public/pics/listes/null.png" height="170"/></p>';
+			  else 
+				echo '<p><img src="'.dirname(__FILE__).'/../../../'.$member->picture_link.'" height="170"/></p>';
 			  echo '<p><b>'.$member->first_name.' '.$member->last_name.'</b></p>';
 			  echo "</td>";
 			  $j = $j+1;
