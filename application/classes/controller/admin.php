@@ -124,5 +124,26 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	$view->set('cercles', $cercles_var);
 	$this->template->set('content', $view);	
   }
+
+  public function action_managelist() {
+	$this->check_admin_status();
+	$view = View::factory('comitee/manage');
+	$cercle_name = $this->request->param('id');
+	$cercle_id = ORM::factory('cercle')
+	  ->where('name', '=', $cercle_name)
+	  ->find()
+	  ->id;
+	$comitee_members = ORM::factory('comiteemember')
+	  ->where('cercle_id', '=', $cercle_id)
+	  ->order_by('id')
+	  ->find_all();
+	$cercle = ORM::factory('cercle')
+	  ->where('id', '=', $cercle_id)
+	  ->find();
+	$view->set('cercle', $cercle);
+	$view->set('comitee_members', $comitee_members);
+	$this->template->set('content', $view);
+
+  }
   
 }

@@ -45,11 +45,17 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 	$this->check_logged_in_status();
 	$member_id = $this->request->param('id');
 	$view = View::factory('comitee/editmember');
-	$cercle_id = Auth::instance()->get_user()->cercle_id;
-	$member = ORM::factory('comiteemember')
-	  ->where('cercle_id', '=', $cercle_id)
-	  ->and_where('id', '=', $member_id)
-	  ->find();
+	if (!Auth::instance()->logged_in('admin')) {
+	  $cercle_id = Auth::instance()->get_user()->cercle_id;
+	  $member = ORM::factory('comiteemember')
+		->where('cercle_id', '=', $cercle_id)
+		->and_where('id', '=', $member_id)
+		->find();
+	} else {
+	  $member = ORM::factory('comiteemember')
+		->where('id', '=', $member_id)
+		->find();
+	}
 	if ($member->loaded()) {
 	  $file = Validation::factory($_FILES);
 	  $file->rule('picture', 'Upload::image');
