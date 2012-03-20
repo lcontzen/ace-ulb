@@ -78,8 +78,8 @@ class View_PDF extends View {
         $html2pdf->pdf->SetTitle( $this->_title );
         $html2pdf->pdf->SetSubject( $this->_subject );
         $html2pdf->pdf->SetKeywords( $this->_keywords );
-		$html2pdf->createIndex('Table of contents', 20, 15, true, true, false, 'helvetica');
 		$html2pdf->WriteHTML($html);
+		$html2pdf->createIndex('Table des matières', 20, 15, true, true, false, 'helvetica');
         $html2pdf->Output($this->_name, 'D');
 	}
 
