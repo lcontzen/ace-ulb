@@ -3,7 +3,7 @@
 class Controller_Comitee extends Controller_Template_Aceulb {
   public function action_view() {
 	$this->check_logged_in_status();
-	$view = View::factory('comitee/pdf');
+	$view = View::factory('comitee/view');
 	$name = $this->request->param('name');
 	$cercle_id = ORM::factory('cercle')
 	  ->where('name', '=', $name)
@@ -16,80 +16,6 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 	$view->set('comitee_name', $name);
 	$view->set('comitee_members', $comitee_members);
 	$this->template->set('content', $view);
-  }
-
-  public function action_generatelists() {
-	$config = array(
-					'author'   => 'Laurent C',
-					'title'    => 'Listes ACE 2011-2012',
-					'subject'  => 'Your subject',
-					'name'     => Text::random().'.pdf', // name file pdf
-					);
-	$view = View_PDF::factory('comitee/pdflist', $config);
-	$cercles = array();
-	$cercles_temp = ORM::factory('cercle')
-	  /* ->order_by('id') */
-	  /* ->limit(15) */
-	  ->find_all();
-	$count = 0;
-	foreach ($cercles_temp as $cercle) {
-	  $cercles[$count]['name'] = $cercle->name;
-	  $comitee_members =  ORM::factory('comiteemember')
-	  ->where('cercle_id', '=', $cercle->id)
-	  ->order_by('id')
-	  ->find_all();
-	  $cercles[$count]['comitee_members'] = $comitee_members;
-	  $count = $count + 1;
-	}
-	$view->set('count', $count);
-	$view->set('cercles', $cercles);
-	$view->render();
-	$this->request->body($view);
-  }
-  
-  public function action_pdf() {
-	$config = array(
-					'author'   => 'Laurent C',
-					'title'    => 'Listes ACE 2011-2012',
-					'subject'  => 'Your subject',
-					'name'     => Text::random().'.pdf', // name file pdf
-					);
-	$view = View_PDF::factory('comitee/pdf2', $config);
-	$name = $this->request->param('name');
-	$cercle_id = ORM::factory('cercle')
-	  ->where('name', '=', $name)
-	  ->find()
-	  ->id;
-	$comitee_members = ORM::factory('comiteemember')
-	  ->where('cercle_id', '=', $cercle_id)
-	  ->order_by('id')
-	  ->find_all();
-	$view->set('comitee_name', $name);
-	$view->set('comitee_members', $comitee_members);
-	$view->render();
-	$this->request->body($view);
-  }
-
-  public function action_pdffrommanage() {
-	$config = array(
-					'author'   => 'Laurent C',
-					'title'    => 'Listes ACE 2011-2012',
-					'subject'  => 'Your subject',
-					'name'     => Text::random().'.pdf', // name file pdf
-					);
-	$view = View_PDF::factory('comitee/manage2', $config);
-	$cercle_id = Auth::instance()->get_user()->cercle_id;
-	$comitee_members = ORM::factory('comiteemember')
-	  ->where('cercle_id', '=', $cercle_id)
-	  ->order_by('id')
-	  ->find_all();
-	$cercle = ORM::factory('cercle')
-	  ->where('id', '=', $cercle_id)
-	  ->find();
-	$view->set('cercle', $cercle);
-	$view->set('comitee_members', $comitee_members);
-	$view->render();
-	$this->request->body($view);
   }
 
   public function action_manage() {
@@ -159,9 +85,7 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 		  $errors = $e->errors('models');
 		  $view->set('errors', $errors);
 		}
-	  }
-
-		
+	  }		
 	  $view->set('member', $member);
 	  $this->template->set('content', $view);
 	}
