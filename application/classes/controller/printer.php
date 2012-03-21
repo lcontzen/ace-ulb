@@ -25,9 +25,7 @@ class Controller_Printer extends Controller_Template_Printing {
 	}
 	$view->set('count', $count);
 	$view->set('cercles', $cercles);
-
 	$view->render();
-	$this->request->body($view);
-	
+	$this->request->redirect($this->request->referrer());
   }
 }
