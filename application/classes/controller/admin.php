@@ -125,12 +125,28 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	$this->template->set('content', $view);	
   }
 
+  public function action_managelistchoice() {
+	$this->check_admin_status();
+	$view = View::factory('admin/managelistchoice');
+		$cercles = ORM::factory('cercle')
+	  ->find_all();
+	$cercles_var = array();
+	foreach ($cercles as $cercle) {
+	  $cercles_var[$cercle->id] = $cercle->name;
+	}
+	if (HTTP_Request::POST == $this->request->method()) {
+	  $this->request->redirect('admin/managelist/'.$this->request->post('cercle_id'));
+	}
+	$view->set('cercles', $cercles_var);
+	$this->template->set('content', $view);
+  }
+
   public function action_managelist() {
 	$this->check_admin_status();
 	$view = View::factory('comitee/manage');
-	$cercle_name = $this->request->param('id');
+	$cercle_id = $this->request->param('id');
 	$cercle_id = ORM::factory('cercle')
-	  ->where('name', '=', $cercle_name)
+	  ->where('id', '=', $cercle_id)
 	  ->find()
 	  ->id;
 	$comitee_members = ORM::factory('comiteemember')
@@ -143,7 +159,6 @@ class Controller_Admin extends Controller_Template_Aceulb {
 	$view->set('cercle', $cercle);
 	$view->set('comitee_members', $comitee_members);
 	$this->template->set('content', $view);
-
   }
   
 }

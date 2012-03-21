@@ -55,6 +55,7 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 	  $member = ORM::factory('comiteemember')
 		->where('id', '=', $member_id)
 		->find();
+	  $cercle_id = $member->cercle_id;
 	}
 	if ($member->loaded()) {
 	  $file = Validation::factory($_FILES);
@@ -84,7 +85,10 @@ class Controller_Comitee extends Controller_Template_Aceulb {
 			$member->picture_link = $picture_path.$picture_name;
 		  }
 		  $member->save();
-		  $this->request->redirect('comitee/manage');
+		  if (Auth::instance()->logged_in('admin'))
+			$this->request->redirect('admin/managelist/'.$cercle_id);
+		  else 
+			$this->request->redirect('comitee/manage');
 		} catch (ORM_Validation_Exception $e) {
 		  $message = 'There were errors, please see form below.';
 		  $view->set('message', $message);
