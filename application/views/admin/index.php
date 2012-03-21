@@ -8,4 +8,5 @@
   <li><?php echo HTML::anchor('admin/addflist', 'Add functions list'); ?></li>
   <li><?php echo HTML::anchor('admin/addcomiteemember', 'Add Comitee Member'); ?></li>
   <li><?php echo HTML::anchor('admin/managelistchoice', 'Manage a list'); ?></li>
+  <li><?php echo HTML::anchor('printer/pdflists', 'Get lists pdf'); ?></li>
 </ul>
