@@ -80,7 +80,8 @@ class View_PDF extends View {
         $html2pdf->pdf->SetKeywords( $this->_keywords );
 		$html2pdf->WriteHTML($html);
 		$html2pdf->createIndex('Table des matières', 20, 15, true, true, false, 'helvetica');
-        $html2pdf->Output($this->_name, 'D');
+        /* $html2pdf->Output($this->_name, 'D'); */
+		$html2pdf->Output('public/listes/ListesACE.pdf', 'F');
 	}
 
 
