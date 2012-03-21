@@ -3,7 +3,7 @@
 		<table class="page_header">
 			<tr>
 				<td style="width: 100%; text-align: left">
-				  Listes ACE 2011-2012 - Dernière mise à jour : <?php echo date("d/m/y"); ?>
+				  Listes ACE 2011-2012 - Générées le : <?php echo date("d/m/y"); ?>
 				</td>
 			</tr>
 		</table>
@@ -40,7 +40,7 @@
 			  echo '<td style="text-align: center">';
 			  echo "<h3>".$member->function.'</h3>';
 			  if ($member->picture_link == null)
-				echo '<p><img src="'.dirname(__FILE__).'/../../../public/pics/listes/null.png" height="170"/></p>';
+				echo '<p><img src="'.dirname(__FILE__).'/../../../public/pics/listes/blank.png" height="170"/></p>';
 			  else 
 				echo '<p><img src="'.dirname(__FILE__).'/../../../'.$member->picture_link.'" height="170"/></p>';
 			  echo '<p><b>'.$member->first_name.' '.$member->last_name.'</b></p>';
