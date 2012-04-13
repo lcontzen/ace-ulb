@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-
+set_time_limit(600);
 // -- Environment setup --------------------------------------------------------
 
 // Load the core Kohana class
