@@ -1,5 +1,5 @@
 SetEnv PHP_VER 5_3
-
+php_value max_execution_time 600
 # Turn on URL rewriting
 RewriteEngine On
 
