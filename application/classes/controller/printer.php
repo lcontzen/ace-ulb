@@ -2,6 +2,7 @@
 
 class Controller_Printer extends Controller_Template_Printing {
   public function action_pdflists() {
+    set_time_limit(600);
 	$config = array(
 					'author'   => 'Laurent C',
 					'title'    => 'Listes ACE 2011-2012',
