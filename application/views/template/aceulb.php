@@ -43,7 +43,8 @@
 		<div class="well">
 		  <b>Documents</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/view/listesace", "Listes ACE"); ?></li>
+			<?php /* <li><?php echo HTML::anchor("page/view/listesace", "Listes ACE"); ?></li> */ ?>
+			<li><?php echo HTML::file_anchor('public/listes/ListesACE.pdf', 'Listes ACE'); ?></li>
 			<li><?php echo HTML::anchor("page/view/vlecks", "Listes Vlecks"); ?></li>
 			<li><?php echo HTML::anchor("page/view/heresie", "Hérésie"); ?></li>
 		  </ul>
