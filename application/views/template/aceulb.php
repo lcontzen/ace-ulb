@@ -57,6 +57,7 @@
 		  <ul>
 			<li><?php echo HTML::anchor("page/view/quetesociale", "Quête Sociale"); ?></li>
 			<li><?php echo HTML::anchor("page/view/ntv", "Nuit Théodore Verhaegen"); ?></li>
+			<li><?php echo HTML::anchor("page/view/CAB2012", "Cantus Auguste Baron"); ?></li>
 		  </ul> 
 		  <b>Divers</b>
 		  <ul>
