@@ -47,8 +47,8 @@
 			<li><?php echo HTML::file_anchor('public/listes/ListesACE.pdf', 'Listes ACE'); ?></li>
 			<li><?php echo HTML::anchor("page/view/vlecks", "Listes Vlecks"); ?></li>
 			<li><?php echo HTML::anchor("page/view/heresie", "Hérésie"); ?></li>
-			<li><?php echo HTML::file_anchor("docs/CHARTE_HORAIRE_12-13.pdf", "Charte Horaire 2012-2013"); ?></li>
-			<li><?php echo HTML::file_anchor("docs/VADE-MECUM-2011-2012.pdf", "Vade Mecum 2011-2012"); ?></li>
+			<li><?php echo HTML::file_anchor("public/docs/CHARTE_HORAIRE_12-13.pdf", "Charte Horaire 2012-2013"); ?></li>
+			<li><?php echo HTML::file_anchor("public/docs/VADE-MECUM-2011-2012.pdf", "Vade Mecum 2011-2012"); ?></li>
 		  </ul>
 		  <b>Agenda</b>
 		  <ul>
