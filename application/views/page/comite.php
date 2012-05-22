@@ -27,7 +27,7 @@
   <div class="row">
 	<div class="span5">
 	  <h3>Trésorière</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/julien.png', array('alt' => "Trésorier", 'width' => '120', 'height' => '170')); ?></p>
+	  <p><?php echo HTML::image('public/pics/comite1213/julie.jpg', array('alt' => "Trésorier", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Julie Berthelier </b><br />
 		<?php echo HTML::mailto("tresorier@ace-ulb.be");	?> </p>
 	</div>
@@ -39,7 +39,7 @@
 	</div>
 	<div class="span5">
 	  <h3>Trésorier Folklore</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/julie.jpg', array('alt' => "Trésorière Folklore", 'width' => '120', 'height' => '170')); ?></p>
+<p><?php echo HTML::image('public/pics/comite1213/null.png', array('alt' => "Trésorière Folklore", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Poste à pourvoir</b><br />
 		<?php echo HTML::mailto("tresorier.folklore@ace-ulb.be");	?> </p>
 	</div>
@@ -76,7 +76,7 @@
 	</div>
 	<div class="span5">
 	  <h3>Evénements 2</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/null.png', array('alt' => "Evénements 2", 'width' => '120', 'height' => '170')); ?></p>
+	  <p><?php echo HTML::image('public/pics/comite1213/julien.png', array('alt' => "Evénements 2", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Julien Van Parijs</b><br />
 		<?php echo HTML::mailto("evenements2@ace-ulb.be");	?> </p>
 	</div>
