@@ -3,7 +3,7 @@
 		<table class="page_header">
 			<tr>
 				<td style="width: 100%; text-align: left">
-				  Listes ACE 2011-2012 - Générées le : <?php echo date("d/m/y"); ?>
+				  Listes ACE 2012-2013 - Générées le : <?php echo date("d/m/y"); ?>
 				</td>
 			</tr>
 		</table>
@@ -17,7 +17,7 @@
 			</tr>
 		</table>
 	</page_footer>
-	<h1>Listes ACE 2011-2012</h1>
+	<h1>Listes ACE 2012-2013</h1>
 	<div class="standard">
 	  <?php echo $count; ?>
 	</div>
