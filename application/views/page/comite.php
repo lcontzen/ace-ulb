@@ -70,7 +70,7 @@
   <div class="row">
 	<div class="span5">
 	  <h3>Evénements 1</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/null.png', array('alt' => "Evenements 1", 'width' => '120', 'height' => '170')); ?></p>
+	  <p><?php echo HTML::image('public/pics/comite1213/marie.png', array('alt' => "Evenements 1", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Marie Déjeans</b><br />
 		<?php echo HTML::mailto("evenements1@ace-ulb.be");	?> </p>
 	</div>
