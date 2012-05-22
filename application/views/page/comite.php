@@ -11,7 +11,7 @@
 		<?php echo HTML::mailto("president@ace-ulb.be");	?> </p>
 	</div>
 	<div class="span5">
-	  <h3>Vice-Président Interne</h3>
+	  <h3>Vice-Présidente Interne</h3>
 	  <p><?php echo HTML::image('public/pics/comite1213/gaelle.jpg', array('alt' => "Vice-Président Interne", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Gaëlle Moury</b><br />
 		<?php echo HTML::mailto("vpi@ace-ulb.be");	?> </p>
@@ -38,7 +38,7 @@
 		<?php echo HTML::mailto("secretaire@ace-ulb.be");	?> </p>
 	</div>
 	<div class="span5">
-	  <h3>Trésorier Folklore</h3>
+	  <h3>Folklore Trésorier</h3>
 <p><?php echo HTML::image('public/pics/comite1213/null.png', array('alt' => "Trésorière Folklore", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Poste à pourvoir</b><br />
 		<?php echo HTML::mailto("tresorier.folklore@ace-ulb.be");	?> </p>
