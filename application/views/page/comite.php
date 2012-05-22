@@ -27,7 +27,7 @@
   <div class="row">
 	<div class="span5">
 	  <h3>Trésorière</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/julie.jpg', array('alt' => "Trésorier", 'width' => '120', 'height' => '170')); ?></p>
+	  <p><?php echo HTML::image('public/pics/comite1213/julie.png', array('alt' => "Trésorier", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Julie Berthelier </b><br />
 		<?php echo HTML::mailto("tresorier@ace-ulb.be");	?> </p>
 	</div>
