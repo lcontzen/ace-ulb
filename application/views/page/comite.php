@@ -60,7 +60,7 @@
 	</div>
 	<div class="span5">
 	  <h3>Culture/Hérésie</h3>
-	  <p><?php echo HTML::image('public/pics/comite1213/null.png', array('alt' => "Culture/Hérésie", 'width' => '120', 'height' => '170')); ?></p>
+	  <p><?php echo HTML::image('public/pics/comite1213/gabriel.jpg', array('alt' => "Culture/Hérésie", 'width' => '120', 'height' => '170')); ?></p>
 	  <p><b>Gabriel Ouli</b><br />
 		<?php echo HTML::mailto("culture@ace-ulb.be");	?> <br />
 		<?php echo HTML::mailto("heresie@ace-ulb.be");	?> </p>
