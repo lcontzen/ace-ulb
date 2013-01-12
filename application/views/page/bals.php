@@ -5,10 +5,10 @@
 <div class="row">
   <div class="span4" align="right">
 	<p>
-	  <b>Vendredi 10 Février :</b> <br />
+	  <b>Vendredi 08 Février :</b> <br />
+	  <b>Vendredi 15 Février :</b> <br />
 	  <br />
-	  <b>Vendredi 17 Février :</b> <br />
-	  <b>Vendredi 24 Février :</b>
+	  <b>Vendredi 22 Février :</b>
 	</p>
   </div>
   <div class="span5">
@@ -16,7 +16,6 @@
 	  Agro <br />
 	  CELB <br />
 	  Philo  <br />
-	  CJC <br />
 	  CP
 	</p>
   </div>
@@ -26,16 +25,19 @@
 <div class="row">
   <div class="span4" align="right">
 	<p>
-	  <b>Vendredi 02 Mars :</b> <br />
+	  <b>Vendredi 01 Mars :</b> <br />
 	  <br />
-	  <b>Samedi 03 Mars : </b> <br />
-	  <b>Vendredi 09 Mars :</b> <br />
+	  <b>Samedi 02 Mars : </b> <br />
+	  <b>Vendredi 08 Mars :</b> <br />
 	  <br />
-	  <b>Samedi 10 Mars : </b> <br />
-	  <b>Vendredi 23 Mars :</b> <br />
+	  <b>Samedi 09 Mars : </b> <br />
+	  <b>Vendredi 15 Mars :</b> <br />
 	  <br />
 	  <br />
-	  <b>Vendredi 30 Mars :</b>
+	  <b>Samedi 16 Mars :</b> <br />
+	  <b>Vendredi 22 Mars :</b> <br />
+	  <br />
+	  <b>Vendredi 29 Mars :</b>
 	</p>
   </div>
   <div class="span5">
@@ -44,11 +46,14 @@
 	  Droit <br />
 	  Pharma <br />
 	  CPS  <br />
-	  CIGA <br />
+	  CJC <br />
 	  CM <br />
+	  Régionales <br />
+	  CIG <br />
+	  CPSY <br />
+	  Semeur <br />
 	  CHAA/CdH/CROM <br />
 	  ISEP/KINE <br />
-	  CPSY <br />
 	  CARé
 	</p>
   </div>
