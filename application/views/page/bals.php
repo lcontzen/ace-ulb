@@ -27,16 +27,16 @@
 	<p>
 	  <b>Vendredi 01 Mars :</b> <br />
 	  <br />
+	  <br />
 	  <b>Samedi 02 Mars : </b> <br />
 	  <b>Vendredi 08 Mars :</b> <br />
-	  <br />
 	  <b>Samedi 09 Mars : </b> <br />
 	  <b>Vendredi 15 Mars :</b> <br />
 	  <br />
 	  <br />
 	  <b>Samedi 16 Mars :</b> <br />
 	  <b>Vendredi 22 Mars :</b> <br />
-	  <br />
+	  <b>Samedi 23 Mars :</b><br />
 	  <b>Vendredi 29 Mars :</b>
 	</p>
   </div>
@@ -44,9 +44,9 @@
 	<p>
 	  CdS <br />
 	  Droit <br />
+	  CJC <br />
 	  Pharma <br />
 	  CPS  <br />
-	  CJC <br />
 	  CM <br />
 	  Régionales <br />
 	  CIG <br />
