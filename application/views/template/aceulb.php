@@ -52,7 +52,8 @@
 		  </ul>
 		  <b>Agenda</b>
 		  <ul>
-			<li><?php echo HTML::anchor("page/view/tds", "TDs"); ?></li>
+			<li><?php echo HTML::file_anchor("public/docs/Agenda_TDs_Fev-Mars_2013.pdf", "TDs"); ?></li>
+			<!-- <li><?php echo HTML::anchor("page/view/tds", "TDs"); ?></li> -->
 			<li><?php echo HTML::anchor("page/view/bals", "Bals"); ?></li>
 		  </ul>
 		  <b>Activités</b>
